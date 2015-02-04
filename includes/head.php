@@ -8,4 +8,3 @@
 </head>
 <body>
 
-<img src="placeholder.it/500x500.png">
