@@ -232,8 +232,17 @@ tfoot{font-style:italic;}
 }
 
 #content{
+   background: url("@{images}/bucketBG.png")center no-repeat; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
   margin-left: @leftNav;
-  background: url("@{images}/bucketBG.png");
-  min-height:100vh;
+  min-height: 100vh;
 }
 
+.bucket{
+  background: white;
+  height: 500px;
+  margin-top: 200px;
+}

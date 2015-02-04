@@ -16,7 +16,8 @@ include("includes/head.php");
 	<div class="poo"></div>
 
 </div>
-	<div id="content">
+<div class="headerBG"></div>
+<div id="content">
 	<div class="row">
 		<div class="larger-12 columns bucket">
 			<p>hej</p>
