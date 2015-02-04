@@ -1,4 +1,4 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
 	<title></title>
@@ -7,3 +7,5 @@
 	<script type="text/javascript" src="js/less.js"></script>
 </head>
 <body>
+
+<img src="placeholder.it/500x500.png">
