@@ -20,14 +20,28 @@ include("includes/head.php");
 <div id="content">
 	<div class="row">
 		<div class="larger-12 columns bucket">
-			<p>hej</p>
-			<h1>hej</h1>
-			<h2>hej</h2>
-			<h3>hej</h3>
-			<h4>hej</h4>
-			<h5>hej</h5>
-			<h6>hej</h6>
-			<a href="#">hej</a>
+			<div class="large-1 medium-1 columns colors"></div>
+			<div class="large-1 medium-1 columns colors"></div>
+			<div class="large-1 medium-1 columns colors"></div>
+			<div class="large-1 medium-1 columns colors"></div>
+			<div class="large-1 medium-1 columns colors"></div>
+			<div class="large-1 medium-1 columns colors"></div>
+			<div class="large-1 medium-1 columns colors"></div>
+			<div class="large-1 medium-1 columns colors"></div>
+			<div class="large-1 medium-1 columns colors"></div>
+			<div class="large-1 medium-1 columns colors"></div>
+			<div class="large-1 medium-1 columns colors"></div>
+			<div class="large-1 medium-1 columns colors"></div>
+
+			<img src="img/adventure.svg"/>
+			<img src="img/career.svg"/>
+			<img src="img/experiences.svg"/>
+			<img src="img/health.svg"/>
+			<img src="img/learningSkills.svg"/>
+			<img src="img/relationships.svg"/>
+			<img src="img/travel.svg"/>
+			<img src="img/empty.svg"/>
+
 		</div>
 	</div>
 </div>
