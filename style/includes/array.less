@@ -15,24 +15,3 @@
 .for-impl_(@i) when (@i > 1)    {.for-impl_((@i - 1))}
 .for-impl_(@i) when (@i > 0)    {.-each(extract(@array, @i))}
 
-
-
-@green: green;
-@red: red;
-@blue: url('http://placehold.it/50x50') red;
-
-// Import already done in options
-// @import "for";
-@colors: 'green', 'red', 'blue';
-.color{
-  display: inline-block;
-  height:50px;
-  width:300px;
-  border: 1px solid;
-  .for(@colors); .-each(@color) {
-    @name: e(@color);
-    &.@{name} {
-      background: @@name no-repeat center;
-    }
-  }
-}
