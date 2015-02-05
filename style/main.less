@@ -1,11 +1,5 @@
 /*http://lesscss.org/features/*/
 
-@import "http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.2/styles/default.min.css";
-@import "test.css";
-
-
-
-
 /**
  * Style with LESS.
  */
@@ -199,7 +193,7 @@ tfoot{font-style:italic;}
   /*****************************/
  /*********good to have********/
 /*****************************/
-@images:"../img";
+@images:"../img/";
 
 
 .black{color:@black;}
@@ -239,7 +233,7 @@ tfoot{font-style:italic;}
 }
 
 #content{
-   background: url("@{images}/bucketBG.png")center no-repeat; 
+   background: url("@{images}bucketBG.png")center no-repeat; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -254,11 +248,40 @@ tfoot{font-style:italic;}
   background: white;
   height: 500px;
   margin-top: 200px;
-
-  
-  img{
-    width: 50px;
-  }
 }
 
+#bucket-container{
+  margin: 0 auto;
+  width: 100%;
+}
+ .icon{
+    height: 70px;
+    width: 8.33333333%;
+    background: red;
+    background: gray center no-repeat;
+   
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    float: left;
+  }
+
+
+// variables
+@num-tiles-in-suit: 13;
+ 
+// mixin with a guard to create a series of bamboo tiles
+.makeTiles(@i) when (@i > 0) {
+    @tile-value: @i - 1;
+    // create the current tile rule
+    .icon_@{tile-value} {
+        background-image: url('@{images}icons/icon_@{i}.svg');
+    }
+ 
+     // next iteration
+    .makeTiles((@i - 1));
+}
+ 
+// create bamboo tiles numbered 0-8
+.makeTiles(@num-tiles-in-suit);
 

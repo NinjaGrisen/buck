@@ -19,20 +19,22 @@ include("includes/head.php");
 <div class="headerBG"></div>
 <div id="content">
 	<div class="row">
-		<div class="larger-12 columns bucket">
-			<div class="large-1 medium-1 columns icon travel"></div>
-			<div class="large-1 medium-1 columns icon adventure"></div>
-			<div class="large-1 medium-1 columns icon exp"></div>
-			<div class="large-1 medium-1 columns icon learning"></div>
-			<div class="large-1 medium-1 columns icon career"></div>
-			<div class="large-1 medium-1 columns icon health"></div>
-			<div class="large-1 medium-1 columns icon relation"></div>
-			<div class="large-1 medium-1 columns icon finance"></div>
-			<div class="large-1 medium-1 columns icon self-imp"></div>
-			<div class="large-1 medium-1 columns icon milestone"></div>
-			<div class="large-1 medium-1 columns icon lifegoals"></div>
-			<div class="large-1 medium-1 columns icon other"></div>
-
+		<div class="larger-12 bucket">
+			<div id="bucket-container">
+				<div class="icon icon_1"></div>
+				<div class="icon icon_2"></div>
+				<div class="icon icon_3"></div>
+				<div class="icon icon_4"></div>
+				<div class="icon icon_5"></div>
+				<div class="icon icon_6"></div>
+				<div class="icon icon_7"></div>
+				<div class="icon icon_8"></div>
+				<div class="icon icon_9"></div>
+				<div class="icon icon_10"></div>
+				<div class="icon icon_11"></div>
+				<div class="icon icon_12"></div>
+			</div>
+<!--
 			<img src="img/adventure.svg"/>
 			<img src="img/career.svg"/>
 			<img src="img/experiences.svg"/>
@@ -40,7 +42,7 @@ include("includes/head.php");
 			<img src="img/learningSkills.svg"/>
 			<img src="img/relationships.svg"/>
 			<img src="img/travel.svg"/>
-			<img src="img/empty.svg"/>
+			<img src="img/empty.svg"/>-->
 
 		</div>
 	</div>
