@@ -266,7 +266,7 @@ tfoot{font-style:italic;}
 
 
 // variables
-@num-icons: 13;
+/*@num-icons: 13;
 
 @icon_color_1: #7FB3D4;
 @icon_color_2: #767676;
@@ -292,4 +292,31 @@ tfoot{font-style:italic;}
   .loop((@i - 1));
 }
  
-.loop(@num-icons);
+.loop(@num-icons);*/
+
+@num-icons: 13;
+
+@icon-colors: 
+    #7FB3D4,
+    #767676,
+    #8CC079,
+    #b35d5d,
+    #b5473e,
+       #666,
+    #81BABD,
+    #AEA7CF,
+    #b5473e,
+       #666,
+    #81BABD,
+    #AEA7CF;
+
+
+.generate-icons(@i: length(@icon-colors)) when (@i > 0) {
+    .generate-icons((@i - 1));
+    .icon_@{i} {
+        background-color: extract(@icon-colors, @i);
+        background-image: url('@{images}icons/icon_@{i}.svg');
+    }
+}
+
+.generate-icons();
