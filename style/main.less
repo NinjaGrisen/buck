@@ -203,7 +203,7 @@ tfoot{font-style:italic;}
 .green{color:@green;}
 .red{color:@red;}
 .yellow{color:@yellow;}
-.orange{color:@orange;}
+.orange{background:@orange;}
 
 #sidebar{
   background: white;
@@ -288,13 +288,13 @@ tfoot{font-style:italic;}
     .icon_@{i} {
       position: relative;
         background-image: url('@{images}icons/icon_@{i}.svg');
-        background-color: @icon_color_9;
-    }
-    &:after{
+    
+     &:after{
       position: absolute;
       content: "fitta";
-      color:@icon_color_@{i};
     }
+    }
+   
   
   .loop((@i - 1));
 }
