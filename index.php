@@ -13,7 +13,6 @@ include("includes/head.php");
 		<li>Completed</li>
 		<li>Recomended</li>
 	</ul>
-	<div class="poo"></div>
 
 </div>
 <div class="headerBG"></div>
