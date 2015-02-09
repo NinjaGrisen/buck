@@ -242,8 +242,6 @@ tfoot{font-style:italic;}
   background-size: cover;
   margin-left: @leftNav;
   min-height: 100vh;
-
-
 }
 
 .bucket{
@@ -256,67 +254,58 @@ tfoot{font-style:italic;}
   width: 100%;
 }
  .icon{
+    position: relative;
     height: 70px;
     width: 8.33333333%;
     background: red;
     background: gray center no-repeat;
     display: inline-block;
     float: left;
+    overflow: hidden;
+    cursor: pointer;
   }
 
+  .icon:before{
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 100%;
+    .skew(@x:-13deg, @y:0);
+    background: rgba(255, 255, 255, 0.2);
+    left: -37px;
+  }
 
-// variables
-/*@num-icons: 13;
+  .icon:hover:before{
+    .transition(@property: all, @time: 400ms, @timing: ease-in-out);
+    left:100px;
+    background: rgba(255, 255, 255, 0.4);
+  }
 
-@icon_color_1: #7FB3D4;
-@icon_color_2: #767676;
-@icon_color_3: #8CC079;
-@icon_color_4: #b35d5d;
-@icon_color_5: #b5473e;
-@icon_color_6: #666;
-@icon_color_7: #81BABD;
-@icon_color_8: #AEA7CF;
-@icon_color_9: #b5473e;
-@icon_color_10: #666;
-@icon_color_11: #81BABD;
-@icon_color_12: #AEA7CF;
-
-
-.loop(@i) when (@i > 0) {
-    @tile-value: @i - 1;
-    .icon_@{i} {
-      background-image: url('@{images}icons/icon_@{i}.svg');
-    }
-   
-  
-  .loop((@i - 1));
+.icon.in-active{
+  background-color: gray;
 }
- 
-.loop(@num-icons);*/
 
-@num-icons: 13;
 
 @icon-colors: 
-    #7FB3D4,
-    #767676,
-    #8CC079,
-    #b35d5d,
-    #b5473e,
-       #666,
-    #81BABD,
-    #AEA7CF,
-    #b5473e,
-       #666,
-    #81BABD,
-    #AEA7CF;
-
+    #55b2a9,
+    #e93333,
+    #00a6cc,
+    #e587a2,
+    #d82157,
+    #60bb51,
+    #a4cd3a,
+    #fedf00,
+    #7c469b,
+    #f29020,
+    #8194cb,
+    #b5b5b5;
 
 .generate-icons(@i: length(@icon-colors)) when (@i > 0) {
     .generate-icons((@i - 1));
-    .icon_@{i} {
+      .icon_@{i} {
         background-color: extract(@icon-colors, @i);
         background-image: url('@{images}icons/icon_@{i}.svg');
+      }
     }
-}
 
 .generate-icons();
