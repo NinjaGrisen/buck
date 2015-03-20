@@ -1,6 +1,6 @@
 $(document).ready(function(){
 	var buckets = $('.buckets'),
-		bucketListAppend = $('#bucket-item-template');
+		bucketListAppend = $('#bucket-item-template').html();
 
 
 
@@ -25,5 +25,9 @@ $(document).ready(function(){
 
 		}
 	});
+
+	buckets.delegate('.edit-list-item', 'click', function(){
+			$(this).parents('.bucket-list-item').toggleClass('expand-edit');
+		});
 
 });

@@ -44,7 +44,7 @@ include("includes/head.php");
 
 			<div class="large-1 medium-1 small-2 columns bucket-index-container">
 				<div class="bucket-index">
-					{{Rank}}
+					<p>{{Rank}}</p>
 				</div>
 			</div>
 
@@ -62,7 +62,7 @@ include("includes/head.php");
 				</div>
 			</div>
 		</div>
-		</template>
+	</template>
 	</div>
 	<!--<div class="row">
 		<div class="large-12 medium-12 small-12  bucket-list-item">

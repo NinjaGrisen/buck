@@ -1,6 +1,6 @@
 $(document).ready(function(){
-		$('.icon').click(function(){
+		$('.icon').on('click', function(){
 			$(this).toggleClass("in-active");
+			console.log(12);
 		});
-
 	});
