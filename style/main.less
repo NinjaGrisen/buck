@@ -168,6 +168,18 @@ tfoot{font-style:italic;}
           transform: @functions;
 }
 
+.placeholder(@placeHolderColor) {
+    ::-webkit-input-placeholder {
+        color: @placeHolderColor;
+    }
+    :-moz-placeholder {
+        color: @placeHolderColor;
+    }
+    ::-moz-placeholder {
+      color: @placeHolderColor;
+    }
+}
+
 
   /*****************************/
  /************Cüller***********/
@@ -185,10 +197,12 @@ tfoot{font-style:italic;}
 @greyLighter:#eee;
 @darkGrey:#404040;
 @lightBlue:lightblue;
+@placeHolderColor:rgb(43, 78, 114);
 
   /*****************************/
  /************Sizes************/
 /*****************************/
+
 @leftNav:170px;
 @navMargin:10px;
 
@@ -196,14 +210,6 @@ tfoot{font-style:italic;}
  /*********good to have********/
 /*****************************/
 @images:"../img/";
-
-
-.black{color:@black;}
-.blue{color:@blue;}
-.green{color:@green;}
-.red{color:@red;}
-.yellow{color:@yellow;}
-.orange{background:@orange;}
 
 #sidebar{
   background: white;
@@ -213,12 +219,21 @@ tfoot{font-style:italic;}
   position: fixed;
   height: 100%;
   overflow: hidden;
+  .placeholder(@placeHolderColor);
+
+  img{
+    display: block;
+    width: 90%;
+    margin: 20px auto 20px auto; 
+
+  }
 
   #search{
-  margin: @navMargin;
-  width: calc(@leftNav - 20px);
-  border: 1px sold black;
-  height: 30px;
+    padding-left: 3px; 
+    margin: @navMargin @navMargin calc(@navMargin *2) @navMargin;
+    width: calc(@leftNav - 20px);
+    border: 1px sold black;
+    height: 30px;
 
     &:focus{
       outline: 0;
@@ -282,6 +297,10 @@ tfoot{font-style:italic;}
 
 .icon.in-active{
   background-color: gray;
+}
+
+.icon.in-active:hover:before{
+    display: none;
 }
 
 

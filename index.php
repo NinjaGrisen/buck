@@ -2,8 +2,9 @@
 include("includes/head.php");
 ?>
 <div id="sidebar">
+	<img src="img/logo.svg"/>
 	<form>
-		<input type="text" name="search" id="search">
+		<input type="text" name="search" id="search" placeholder="Search...">
 	</form>
 	<ul>
 		<li>Bucket</li>
