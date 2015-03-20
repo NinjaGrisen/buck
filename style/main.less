@@ -1,83 +1,4 @@
-/*http://lesscss.org/features/*/
 
-/**
- * Style with LESS.
- */
-
-/** --------------------------------------------------------------
- * Reset. http://meyerweb.com/eric/tools/css/reset/ v2.0 | 20110126
- *
- */
-html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,
-a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,
-small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,
-table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,
-figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,
-time,mark,audio,video{margin:0;padding:0;border:0;font-size:100.01%;font:inherit;vertical-align:baseline;}
-body{line-height:1;}
-ol,ul{list-style: none;}
-blockquote,q{quotes:none;}
-blockquote:before,blockquote:after,q:before,q:after{content:'';content:none;}
-table{border-collapse:collapse;border-spacing:0;}
-
-
-/** --------------------------------------------------------------
- * HTML5 elements.
- *
- */
-article,aside,details,figcaption,figure,footer,header,hgroup,nav,section{display:block;}
-audio,canvas,video{display:inline-block;*display:inline;*zoom:1;}
-audio:not([controls]){display:none;}
-[hidden]{display:none;}
-
-
-/** --------------------------------------------------------------
- * The micro clearfix http://nicolasgallagher.com/micro-clearfix-hack/
- *
- */
-.clearfix(){*zoom:1;
-  &:before, &:after {content:"";display:table;}
-  &:after {clear:both;}
-}
-.wrapper{.clearfix();}
-
-
-/** --------------------------------------------------------------
- * Typography.
- * 
- */
-@font-family-helvetica: Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
-@font-family-monospace: monospace;
-@magic-number: 22px; /* 16px - 100%/1.375 */
-body{color:#222;font:100.01%/1.375 @font-family-helvetica;}
-p{margin-bottom:@magic-number;}
-b,strong{font-weight:bold;}
-i,em{font-style:italic;}
-pre,code{font:1em/1.375 @font-family-monospace;}
-
-/* headers */
-h1{font-size:2.375em;line-height:1.1579;margin-bottom:@magic-number;}
-
-/* Lists */
-/*
-li ul,li ol{margin:0;}
-ul,ol{margin:0.6875em 1.5em 1.375em 0;padding-left:1.5em;}
-ul{list-style-type:disc;}
-ol{list-style-type:decimal;}*/
-
-/* Tables. Because of the need for padding on TH and TD, the vertical rhythm
-  on table cells has to be 33px, instead of the standard 22px or 44px
-  of other elements. */
-table{margin-bottom:1.375em;width:100%;}
-caption{text-align:left;font-style:italic;}
-thead{border-bottom:2px solid #222;}
-th{vertical-align:bottom;font-weight:bold;text-align:left;}
-th,td{padding:5px 10px 5px 5px;}
-tbody tr:nth-child(even) td, tbody tr.even td {}
-tbody tr{border-bottom:1px solid #eee;
-  &:hover{color:#000;}
-}
-tfoot{font-style:italic;}
 
 
 /** --------------------------------------------------------------
@@ -86,6 +7,8 @@ tfoot{font-style:italic;}
  */
 
  
+
+
 .border-radius(@radius:5px) {
   -webkit-border-radius: @radius;
      -moz-border-radius: @radius;
@@ -242,6 +165,7 @@ tfoot{font-style:italic;}
 
   ul{
     margin: @navMargin; 
+   list-style: none;
 
     li{
       margin-bottom: @navMargin;
@@ -249,25 +173,20 @@ tfoot{font-style:italic;}
   }
 }
 
-#content{
+#container{
    background: url("@{images}bucketBG.png")center no-repeat; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
   margin-left: @leftNav;
-  min-height: 100vh;
+  min-height: 100%;
 }
 
-.bucket{
-  background: white;
-  height: 500px;
+.bucket-container{
   margin-top: 200px;
 }
 
-#bucket-container{
-  width: 100%;
-}
  .icon{
     position: relative;
     height: 70px;
@@ -303,7 +222,6 @@ tfoot{font-style:italic;}
     display: none;
 }
 
-
 @icon-colors: 
     #55b2a9,
     #e93333,
@@ -327,3 +245,63 @@ tfoot{font-style:italic;}
     }
 
 .generate-icons();
+
+
+.bucket-list{
+  background: red;
+}
+.bucket-list-item{
+  width: 100%;
+  background: white;
+  margin-bottom: 10px;
+  height: 120px;
+  display: inline-block;
+}
+.bucket-index-container{
+  height: 100%;
+  display: inline-block;
+   .bucket-index{
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: tomato;
+      line-height: 50px;
+      margin: 35px auto 0 auto;
+      text-align: center;
+      font-size: 1.5em;
+   }
+}
+.bucket-text-container{
+  vertical-align: top;
+  display: inline-block;
+  height: 100%;
+  overflow: hidden;
+
+    h1{
+      font-size: 1.9em;
+  }
+}
+
+.bucket-controller-container{
+   height: 100%;
+   .drag-drop{
+      font-size: 2.5em;
+      text-align: center;
+   }
+   .edit-list-item{
+      text-align: center;
+      font-size: 1.7em;
+      line-height: 10px;
+   }
+}
+
+
+@media only screen and (min-width: 30px) and (max-width: 1190px) {
+  #container{
+     margin-left: -@leftNav;
+     margin: 0 auto;
+  }
+  #sidebar{
+    margin-left: -@leftNav;
+  }
+}

@@ -17,9 +17,10 @@ include("includes/head.php");
 
 </div>
 <div class="headerBG"></div>
-<div id="content">
+<div id="container" >
+
 	<div class="row">
-		<div class="larger-12 bucket">
+		<div class="larger-12 bucket-container">
 			<div id="bucket-container">
 				<div class="icon icon_1"></div>
 				<div class="icon icon_2"></div>
@@ -34,19 +35,112 @@ include("includes/head.php");
 				<div class="icon icon_11"></div>
 				<div class="icon icon_12"></div>
 			</div>
-<!--
-			<img src="img/adventure.svg"/>
-			<img src="img/career.svg"/>
-			<img src="img/experiences.svg"/>
-			<img src="img/health.svg"/>
-			<img src="img/learningSkills.svg"/>
-			<img src="img/relationships.svg"/>
-			<img src="img/travel.svg"/>
-			<img src="img/empty.svg"/>-->
 
 		</div>
 	</div>
+	<div class="row">
+		<div class="large-12 medium-12 small-12  bucket-list-item">
+
+			<div class="large-1 medium-1 small-2 columns bucket-index-container">
+				<div class="bucket-index">
+					4
+				</div>
+			</div>
+
+			<div class="large-10 medium-10 small-8 columns bucket-text-container">
+				<div class=" bucket-list-header">
+					<h1>Göra en bucket list</h1>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim ve
+					</p>
+				</div>
+			</div>
+
+			<div class="large-1 medium-1 small-2 columns bucket-controller-container">
+				<div class="bucket-controller">
+					<p class="drag-drop">&#10486;</p>
+					<p class="edit-list-item">&#9784;</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="large-12 medium-12 small-12  bucket-list-item">
+
+			<div class="large-1 medium-1 small-2 columns bucket-index-container">
+				<div class="bucket-index">
+					4
+				</div>
+			</div>
+
+			<div class="large-10 medium-10 small-8 columns bucket-text-container">
+				<div class=" bucket-list-header">
+					<h1>Göra en bucket list</h1>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim ve
+					</p>
+				</div>
+			</div>
+
+			<div class="large-1 medium-1 small-2 columns bucket-controller-container">
+				<div class="bucket-controller">
+					<p class="drag-drop">&#10486;</p>
+					<p class="edit-list-item">&#9784;</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="large-12 medium-12 small-12  bucket-list-item">
+
+			<div class="large-1 medium-1 small-2 columns bucket-index-container">
+				<div class="bucket-index">
+					4
+				</div>
+			</div>
+
+			<div class="large-10 medium-10 small-8 columns bucket-text-container">
+				<div class=" bucket-list-header">
+					<h1>Göra en bucket list</h1>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim ve
+					</p>
+				</div>
+			</div>
+
+			<div class="large-1 medium-1 small-2 columns bucket-controller-container">
+				<div class="bucket-controller">
+					<p class="drag-drop">&#10486;</p>
+					<p class="edit-list-item">&#9784;</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="large-12 medium-12 small-12  bucket-list-item">
+
+			<div class="large-1 medium-1 small-2 columns bucket-index-container">
+				<div class="bucket-index">
+					4
+				</div>
+			</div>
+
+			<div class="large-10 medium-10 small-8 columns bucket-text-container">
+				<div class=" bucket-list-header">
+					<h1>Göra en bucket list</h1>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim ve
+					</p>
+				</div>
+			</div>
+
+			<div class="large-1 medium-1 small-2 columns bucket-controller-container">
+				<div class="bucket-controller">
+					<p class="drag-drop">&#10486;</p>
+					<p class="edit-list-item">&#9784;</p>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
+
 <?php
 include("includes/footer.php");
 ?>
