@@ -16,3 +16,5 @@ $listitem = array(
   array('ItemID' => '4','CategoryID' => '3','UserId' => '1','Title' => 'Have a drink!','Desc' => 'Drink something good.','Image' => '','Checked' => '1','Rank' => '3','Private' => '1'),
   array('ItemID' => '5','CategoryID' => '4','UserId' => '1','Title' => 'Go travel!','Desc' => 'Travel to a foreign country!','Image' => '','Checked' => '0','Rank' => '4','Private' => '1')
 );
+
+echo json_encode($listitem);

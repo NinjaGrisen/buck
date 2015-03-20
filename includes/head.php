@@ -13,6 +13,7 @@
 	<script type="text/javascript" src="js/vendor/jquery.js"></script>
 	<script type="text/javascript" src="js/less.js"></script>
 	<script type="text/javascript" src="js/main.js"></script>
+	<script type="text/javascript" src="js/ajax.js"></script>
 </head>
 <body>
 
