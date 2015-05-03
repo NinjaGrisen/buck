@@ -2,20 +2,26 @@
 include("includes/head.php");
 ?>
 
-
-<div class="row">
-	<div class="large-4 columns login">
+<div class="wrapper">
+	<div class="splashContent">
+		<img src="img/logo.svg"/>
+		<p>Make a list of everything you want to experience in life and DO IT!</p>
+		<div class="login">
+		<p>Login</p>
 		<form>
-			<label>Username</label>
-			<input type="text">
-			<label>Password</label>
-			<input type="text">
+			<input type="text" placeholder="Username"/>
+			<input type="password" placeholder="Password"/>
+			<input type="submit" value="Log in"/>
+			<input type="checkbox"/>
+			<label>Remember me</label>
+			<a href="#">Forgot password?</a>
 		</form>
-	</div>
-
-	<div class="large-4 columns socialMedia">
-		some bullshit right here
-	</div>
+		</div>
+		<div class="register">
+			<p>New to Bucket List?</p>
+			<button>Register</button>
+		</div>
+	</div>	
 </div>
 
 
