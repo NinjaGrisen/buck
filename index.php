@@ -40,7 +40,7 @@ include("includes/head.php");
 	</div>
 	<div class="row buckets">
 	<template id="bucket-item-template">
-		<div class="large-12 medium-12 small-12  bucket-list-item">
+		<div id='{{ItemID}}' class="large-12 medium-12 small-12 bucket-list-item">
 
 			<div class="large-1 medium-1 small-2 columns bucket-index-container">
 				<div class="bucket-index">
@@ -50,15 +50,17 @@ include("includes/head.php");
 
 			<div class="large-10 medium-10 small-8 columns bucket-text-container">
 				<div class=" bucket-list-header">
-					<h1>{{Title}}</h1>
-					<p>{{Desc}}</p>
+					<h1 class='list-title'>{{Title}}</h1>
+					<p class='list-desc'>{{Desc}}</p>
+					<input type="text" class='editable hidden title' value="{{Title}}" />
+					<input type="button" class='editable hidden update-button' value="Update"/>
 				</div>
 			</div>
 
 			<div class="large-1 medium-1 small-2 columns bucket-controller-container">
 				<div class="bucket-controller">
 					<p class="drag-drop">&#10486;</p>
-					<p class="edit-list-item">&#9784;</p>
+					<p class="edit-list-item" id='itemid{{ItemID}}'>&#9784;</p>
 				</div>
 			</div>
 		</div>

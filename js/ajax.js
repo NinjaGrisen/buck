@@ -1,11 +1,68 @@
 $(document).ready(function(){
 	var buckets = $('.buckets'),
-		listmanagement = $('#listManagement')
+		toggeContainer,
+		listmanagement = $('#listManagement'),
 		bucketListAppend = $('#bucket-item-template').html();
 
 
+		$.ajax({
+			url : 'php/getList.php',
+			dataType : 'json', //text
+			
+			success: function(data){
+				console.log(data);
+				$.each(data, function(i){
+					//$('#result').append('<p class="pointer" id="' + data[i].ItemID + '">' + data[i].Title + '</p>');
+					buckets.append(Mustache.render(bucketListAppend, data[i]));
+					console.log('Printing out the data.');
+				});
+			},
+			error: function(){
 
-	$.ajax({
+			},
+		});
+
+
+	buckets.delegate('.edit-list-item', 'click', function(){
+		var list_id = $(this).parents('.bucket-list-item').attr('id'),
+			result_h1 = $(this).parents('#' + list_id).find("h1.list-title"),
+			result_p = $(this).parents('#' + list_id).find("p.list-desc"),
+			result_input = $(this).parents('#' + list_id).find("input.title"),
+			result_input_btn = $(this).parents('#' + list_id).find("input.update-button");
+
+			result_h1.toggleClass('hidden');
+			result_p.toggleClass('hidden');
+			result_input.toggleClass('hidden');
+			result_input_btn.toggleClass('hidden');
+
+		$('.update-button').click(function(){
+			var title = $(this).parents('#' + list_id).find('.title').val(),
+				desc = result_p.text();
+
+				console.log(title);
+
+			$.ajax({
+				type : 'POST',
+				dataType : 'json', //text
+				url : 'php/updateList.php',
+				data : {title: title, list_id: list_id},
+				success: function(data){
+					buckets.find('#' + list_id).html(Mustache.render(bucketListAppend, data));
+					result_h1.toggleClass('hidden');
+					result_p.toggleClass('hidden');
+					result_input.toggleClass('hidden');
+					toggeContainer.toggleClass('expand-edit');
+					console.log('Printing out the updated data.');
+					title = 0;
+				},
+				error: function(){
+
+				},
+			});
+		});
+	});
+
+	/*$.ajax({
 		url: 'php/listitem.php',
 		dataType: 'json',
 
@@ -25,59 +82,9 @@ $(document).ready(function(){
 		error: function(data){
 
 		}
-	});
-
+	});*/
 	buckets.delegate('.edit-list-item', 'click', function(){
-			$(this).parents('.bucket-list-item').toggleClass('expand-edit');
+			toggeContainer = $(this).parents('.bucket-list-item');
+			toggeContainer.toggleClass('expand-edit');
 		});
-
-	//För list.php, list hantering som uppdatering, hämta listor och lägga till.
-
-	$('#getlist').click(function(){
-
-		$('#result').html('');
-
-		$.ajax({
-			url : 'php/getList.php',
-			dataType : 'json', //text
-			
-			success: function(data){
-				console.log(data);
-				$.each(data, function(i){
-					$('#result').append('<p class="pointer" id="' + data[i].ItemID + '">' + data[i].Title + '</p>');
-					console.log('Printing out the data.');
-				});
-			},
-			error: function(){
-
-			},
-		});
-	});
-
-	listmanagement.delegate('#result p', 'click', function(){
-		var result = $(this).text(),
-			list_id = $(this).attr('id');
-
-		$(this).replaceWith('<input id="updated" type="text" value="' + result + '"/> <input id="update" value="Update" type="submit" />');
-		console.log('Clicking to change p element.');
-
-		$('#update').click(function(){
-			var title = $('#updated').val();
-
-			$.ajax({
-				type : 'POST',
-				url : 'php/updateList.php',
-				data : { title: title, list_id: list_id},
-				success: function(data){
-					$('#updated').replaceWith('<p class="pointer" id="' + data.ItemID + '">' + data.Title + '</p>');
-					$('#update').remove();
-					console.log('Printing out the updated data.');
-				},
-				error: function(){
-
-				},
-			});
-		});
-	});
-
 });
