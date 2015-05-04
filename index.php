@@ -18,6 +18,11 @@ include("includes/head.php");
 </div>
 <div class="headerBG"></div>
 <div id="container" >
+	<div class="row">
+		<div class="large-12 medium-12 small-12 page-header">
+			<h1>Username's Bucket List</h1>
+		</div>
+	</div>
 
 	<div class="row">
 		<div class="larger-12 bucket-container">
