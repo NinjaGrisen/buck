@@ -20,7 +20,8 @@ body{
 		font-size: 1.3em;
 		line-height: 1.3em;
 	}
-	.login{
+	.login,
+	.register{
 		padding: 10px 0;
 		background: #f6f6f6;
 		border-radius: 3px;
@@ -35,7 +36,8 @@ body{
 	
 		input[type="text"],
 		input[type="password"],
-		input[type="submit"]{
+		input[type="submit"],
+		select{
 			height:35px;
 			border-radius: 3px;
 			margin: 0 0 10px 10px;
@@ -61,12 +63,42 @@ body{
 			margin-left: 10px;
 		}
 	}
+	.registerActive{
+		margin-top: -300px;
+	}
+	.registerActiveRemove{
+		display: none;
+	}
+	.buckSplashRegister{
+		width: 200px;
+		display: block;
+		margin: 0 auto;
+	}
+	.registerForm{
+		display: none;
+	}
+	.displayRegisterForm{
+		display: block;
+	}
 	.register{
 		margin-top: 10px;
 		background: #f6f6f6;
 		border-radius: 3px;
 		padding-top: 10px;
 		border:1px #b2b2b2 solid;
+
+		select{
+			height: 40px;
+		}
+		select.bday{
+			width: 30%;
+			margin-left: 2%;
+		}
+		select.gender,
+		input[type="password"],
+		input[type="submit"]{
+			width: 310px;
+		}
 
 		p{
 			text-align: left;
