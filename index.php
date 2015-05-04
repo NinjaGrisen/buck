@@ -59,9 +59,10 @@ include("includes/head.php");
 
 			<div class="large-1 medium-1 small-2 columns bucket-controller-container">
 				<div class="bucket-controller">
-					<p class="drag-drop">&#10486;</p>
-					<p class="edit-list-item" id='itemid{{ItemID}}'>&#9784;</p>
+					<img class="edit-list-item" id='itemid{{ItemID}}' src="img/cogwheel.png">
 				</div>
+
+				<div class="cat-color"></div>
 			</div>
 		</div>
 	</template>

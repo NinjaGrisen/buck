@@ -1,5 +1,11 @@
 
-
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
 
 /** --------------------------------------------------------------
  * CSS3 mixins.
@@ -291,15 +297,14 @@
 
 .bucket-controller-container{
    height: 100%;
-   .drag-drop{
-      font-size: 2.5em;
-      text-align: center;
-      cursor: pointer;
-   }
+   margin: 0;
+   border-right:10px solid #ff0000;
    .edit-list-item{
       text-align: center;
+      margin-top:10px;
       font-size: 1.7em;
       cursor: pointer;
+      float:right;
       line-height: 10px;
    }
 }
