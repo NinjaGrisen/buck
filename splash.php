@@ -40,6 +40,8 @@ include("includes/head.php");
 				</select>
 				<input type="password" placeholder="Password"/>
 				<input type="Password" placeholder="Repeat Password"/>
+				<input type="checkbox">
+				<label>I accept the <a href="#">Terms of Service</a></label>
 				<input type="submit" value="Join Bucket List!"/>
 			</form>
 			<button class="activeRegister"id="showResiter">Register</button>
