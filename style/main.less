@@ -7,6 +7,19 @@ html {
   box-sizing: inherit;
 }
 
+@font-face{
+   font-family: TTChocolates;
+   src: url(../font/WEB/Regular/ttchocolates-regular-webfont.ttf),
+   url(../font/WEB/Regular/ttchocolates-regular-webfont.eot); /* IE */
+}
+
+@font-face{
+   font-family: TTChocolates;
+   src: url(../font/WEB/Bold/ttchocolates-bold-webfont.ttf),
+   url(../font/WEB/Bold/ttchocolates-bold-webfont.eot); /* IE */
+   font-weight: bold;
+}
+
 /** --------------------------------------------------------------
  * CSS3 mixins.
  * 
@@ -115,6 +128,8 @@ html {
 /*****************************/
 @mainColor:#2b4e72;
 @secondaryColor:#2790b0;
+@boxBackground:#f6f6f6;
+@boxBorder:#e9e9e9;
 @black:#000;
 @blue:#049cdb;
 @green:#46a546;
@@ -263,7 +278,10 @@ html {
 }
 .bucket-list-item{
   width: 100%;
-  background: white;
+  background: @boxBackground;
+  border-bottom:1px solid @boxBorder;
+  border-left:1px solid @boxBorder;
+  border-top:1px solid @boxBorder;
   margin-bottom: 10px;
   height: 120px;
   display: inline-block;
@@ -272,15 +290,18 @@ html {
   height: 100%;
   display: inline-block;
    .bucket-index{
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      background: tomato;
-      margin: 35px auto 0 auto;
-      p{
-        text-align: center;
-        font-size: 1.5em;
-        line-height: 50px;  
+      img {
+         float:left;
+         margin-top: 35px;
+      }
+
+      p {
+         font-family: TTChocolates;
+         font-weight: bold;
+         font-size: 50pt;
+         margin: 5px 0 0 0;
+         text-align: center;
+         color: #929292;
       }
    }
 }
@@ -290,9 +311,17 @@ html {
   height: 100%;
   overflow: hidden;
 
-    h1{
-      font-size: 1.9em;
-  }
+  h1 {
+      font-family: TTChocolates;
+      font-weight: bold;
+      margin: 18px 0 0 0;
+   }
+
+   p {
+      font-family: TTChocolates;
+      margin: 0;
+      font-size: 16pt;
+   }
 }
 
 .bucket-controller-container{

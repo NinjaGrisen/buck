@@ -42,13 +42,14 @@ include("includes/head.php");
 	<template id="bucket-item-template">
 		<div id='{{ItemID}}' class="large-12 medium-12 small-12 bucket-list-item">
 
-			<div class="large-1 medium-1 small-2 columns bucket-index-container">
+			<div class="large-2 medium-2 small-2 columns bucket-index-container">
 				<div class="bucket-index">
+					<img src="img/drag.png"/>
 					<p>{{Rank}}</p>
 				</div>
 			</div>
 
-			<div class="large-10 medium-10 small-8 columns bucket-text-container">
+			<div class="large-9 medium-9 small-8 columns bucket-text-container">
 				<div class=" bucket-list-header">
 					<h1 class='list-title'>{{Title}}</h1>
 					<p class='list-desc'>{{Desc}}</p>
