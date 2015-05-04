@@ -128,8 +128,11 @@ html {
 /*****************************/
 @mainColor:#2b4e72;
 @secondaryColor:#2790b0;
+@bucketGreen:#88c425;
 @boxBackground:#f6f6f6;
 @boxBorder:#e9e9e9;
+@headerBorder:#bef202;
+@textWhite:#f4f4f4;
 @black:#000;
 @blue:#049cdb;
 @green:#46a546;
@@ -204,8 +207,24 @@ html {
   min-height: 100%;
 }
 
+.page-header {
+   background: @bucketGreen;
+   height:120px;
+   border:1px solid @headerBorder;
+   margin-top:20px;
+
+   h1 {
+      font-family: TTChocolates;
+      font-weight: bold;
+      font-size: 60px;
+      text-align: center;
+      color: @textWhite;
+      margin-top: 20px;
+   }
+}
+
 .bucket-container{
-  margin-top: 200px;
+  margin-top: 20px;
 }
 
  .icon{
