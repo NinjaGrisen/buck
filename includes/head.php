@@ -9,8 +9,8 @@
 	<link rel="stylesheet/less" type="text/css" href="style/splash.less" />
 	<link rel="stylesheet/less" type="text/css" href="style/main.less" />
 	<script type="text/javascript" src="js/vendor/jquery.js"></script>
+	<script type="text/javascript" src="js/vendor/jquery-ui.min.js"></script>
 	<script type="text/javascript" src="js/vendor/modernizr.js"></script>
-	<script type="text/javascript" src="js/vendor/jquery.js"></script>
 	<script type="text/javascript" src="js/less.js"></script>
 	<script type="text/javascript" src="js/main.js"></script>
 	<script type="text/javascript" src="js/ajax.js"></script>

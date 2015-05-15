@@ -43,14 +43,15 @@ include("includes/head.php");
 
 		</div>
 	</div>
+	<input type="button" value="Value TOwns" class="valueTown">
 	<div class="row buckets">
 	<template id="bucket-item-template">
 		<div id='{{ItemID}}' class="large-12 medium-12 small-12 bucket-list-item">
 
 			<div class="large-2 medium-2 small-2 columns bucket-index-container">
 				<div class="bucket-index">
-					<img src="img/drag.png"/>
-					<p>{{Rank}}</p>
+					<img class="drag" src="img/drag.png"/>
+					<p class="rank-number">{{Rank}}</p>
 				</div>
 			</div>
 
@@ -65,7 +66,7 @@ include("includes/head.php");
 
 			<div class="large-1 medium-1 small-2 columns bucket-controller-container">
 				<div class="bucket-controller">
-					<img class="edit-list-item" id='itemid{{ItemID}}' src="img/cogwheel.png">
+					<img class="edit-list-item" id='{{ItemID}}' src="img/cogwheel.png">
 				</div>
 
 				<div class="cat-color"></div>
