@@ -68,18 +68,19 @@ $(document).ready(function(){
 			result_h1 = $(this).parents('#' + list_id).find("h1.list-title"),
 			result_p = $(this).parents('#' + list_id).find("p.list-desc"),
 			result_input_title = $(this).parents('#' + list_id).find("input.title"),
+			result_input_desc = $(this).parents('#' + list_id).find("input.desc"),
 			result_input_btn = $(this).parents('#' + list_id).find("input.update-button");
 			result_h1.toggleClass('hidden');
 			result_p.toggleClass('hidden');
 			result_input_title.toggleClass('hidden');
+			result_input_desc.toggleClass('hidden');
 			result_input_btn.toggleClass('hidden');
 			//console.log(list_id);
 		
 		$('.update-button').click(function(){
 			
 			var title = $(this).parents('#' + list_id).find('.title').val(),
-				desc = result_p.text();
-				//console.log(title);
+				desc = $(this).parents('#' + list_id).find('.desc').val();
 			
 			$.ajax({
 				
@@ -92,7 +93,8 @@ $(document).ready(function(){
 
 					result_h1.toggleClass('hidden');
 					result_p.toggleClass('hidden');
-					result_input.toggleClass('hidden');
+					result_input_title.toggleClass('hidden');
+					result_input_desc.toggleClass('hidden');
 					toggeContainer.removeClass('expand-edit');
 				
 					buckets.find('#' + list_id).html(Mustache.render(bucketListAppend, data));

@@ -1,5 +1,5 @@
 <?php
-	
+
 	$do = isset($_GET['do']) ? $_GET['do'] : null;
 	$data = '';
 
@@ -7,12 +7,13 @@
 
 if($do === 'update-title'){
 
-	$sql = "UPDATE listitem SET Title = :title 
+	$sql = "UPDATE listitem SET Title = :title, Description = :description
 			WHERE ItemID = :id";
 
 	$update = $dbh->prepare($sql);
 
 	$update->bindParam(':title', $_POST['title'], PDO::PARAM_STR);
+	$update->bindParam(':description', $_POST['desc'], PDO::PARAM_STR);
 	$update->bindParam(':id', $_POST['list_id'], PDO::PARAM_INT);
 
 	$update->execute();
