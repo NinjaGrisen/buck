@@ -1,7 +1,7 @@
 <?php
 include("includes/head.php");
 ?>
-<div id="sidebar">
+<div class="sidebar">
 	<img src="img/logo.svg"/>
 	<form>
 		<input type="text" name="search" id="search" placeholder="Search...">
@@ -16,22 +16,38 @@ include("includes/head.php");
 	</ul>
 
 </div>
+
 <div class="bucket-container">
 	<ul class="filter_icon">
-		<li class="icon icon_1">hej</li>
-		<li class="icon icon_2">hej</li>
-		<li class="icon icon_3">hej</li>
-		<li class="icon icon_4">hej</li>
-		<li class="icon icon_5">hej</li>
-		<li class="icon icon_6">hej</li>
-		<li class="icon icon_7">hej</li>
-		<li class="icon icon_8">hej</li>
-		<li class="icon icon_9">hej</li>
-		<li class="icon icon_10">hej</li>
-		<li class="icon icon_11">hej</li>
-		<li class="icon icon_12">hej</li>
+		<li class="icon icon_1">Travel</li>
+		<li class="icon icon_2">Adventure</li>
+		<li class="icon icon_3">Experience</li>
+		<li class="icon icon_4">Learning</li>
+		<li class="icon icon_5">Career</li>
+		<li class="icon icon_6">Health</li>
+		<li class="icon icon_7">Relationships</li>
+		<li class="icon icon_8">Financial</li>
+		<li class="icon icon_9">Improvement</li>
+		<li class="icon icon_10">Milestones</li>
+		<li class="icon icon_11">Life goals</li>
+		<li class="icon icon_12">Other</li>
 	</ul>
 </div>
+<div class="main-menu">
+	<div class="menuContainer">
+		<div id="arrow-left" class="menuMain placement" >
+			<span></span>
+		</div>
+	</div>
+</div>
+<div class="filter-menu">
+	<div class="menuContainer">
+		<div id="arrow-right" class="menuFilter placement" >
+			<span></span>
+		</div>
+	</div>
+</div>
+
 <div class="headerBG"></div>
 <div id="container" >
 	<div class="row">

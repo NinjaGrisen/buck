@@ -6,6 +6,16 @@ $(document).ready(function(){
 		$(this).toggleClass("in-active");
 	});
 
+	$('.filter-menu').click(function(){
+		$(this).toggleClass('active');
+		$('.menuFilter').toggleClass("active");
+		$('.icon').toggleClass('dropOut');
+	});
+	$('.main-menu').click(function(){
+		$('.menuMain').toggleClass("active");
+		$('.sidebar').toggleClass('mobDisplay');
+		$(this).toggleClass('mainActive');
+	});
 
 	/******************Splash page*********************/
 
