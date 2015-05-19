@@ -43,7 +43,7 @@ include("includes/head.php");
 
 		</div>
 	</div>
-	<input type="button" value="Value TOwns" class="valueTown">
+	<!-- <input type="button" value="Value TOwns" class="valueTown"> -->
 	<div class="row buckets">
 	<template id="bucket-item-template">
 		<div id='{{ItemID}}' class="large-12 medium-12 small-12 bucket-list-item">
