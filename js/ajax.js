@@ -21,22 +21,16 @@ $(document).ready(function(){
 		});
 
 		$('.buckets').sortable({
-			//axis: 'y', //STAFFAN
+			handle: ".drag",
 			opacity: 0.7,
 			revert: false,
+			containment: 'parent',
 
 
 			stop: function(){
 			var bucketLength = $('.bucket-list-item').length;
 			var settingsValueBajs = 2;
 			//console.log('bucketLength' + bucketLength);
-
-			for(var i = 1; i < bucketLength + 1; i++){
-
-				$('.bucket-list-item:nth-child('+ settingsValueBajs +') .rank-number').text(i);
-				console.log(i)
-				settingsValueBajs++;
-			}
 
 			$('.bucket-list-item').each(function(i, v){
 				var itemId = $(v).attr('id'),
@@ -49,13 +43,14 @@ $(document).ready(function(){
 					data : {itemId: itemId, indexValue: indexValue},
 						
 					success: function(data){
-						//buckets.append(Mustache.render(bucketListAppend, data[i]));
-						//buckets.find('#' + item).html(Mustache.render(bucketListAppend, data[i]));
-						/*$.each(data, function(i){
-							$('.rank-number').text(data[i].Rank);
-							//console.log(data[i].Rank)
-						});*/
-						//console.log('Printing out the data.');
+
+					for(var i = 1; i < bucketLength + 1; i++){
+
+						$('.bucket-list-item:nth-child('+ settingsValueBajs +') .rank-number').text(i);
+						console.log(i)
+						settingsValueBajs++;
+					}
+
 					},
 					error: function(){
 					},
@@ -67,24 +62,16 @@ $(document).ready(function(){
 
 	$('.drag').disableSelection();
 
-	$('.valueTown').on('click', function(){
-
-		$('.bucket-list-item').each(function(i, v){
-			rankId = $(v).attr('id');
-			//console.log("Rank ID: " + rankId + " Index: " + parseInt(i + 1));
-		});
-		//console.log('_______________________________________________');
-	});
 	buckets.delegate('.edit-list-item', 'click', function(){
 		
 		var list_id = $(this).parents('.bucket-list-item').attr('id'),
 			result_h1 = $(this).parents('#' + list_id).find("h1.list-title"),
 			result_p = $(this).parents('#' + list_id).find("p.list-desc"),
-			result_input = $(this).parents('#' + list_id).find("input.title"),
+			result_input_title = $(this).parents('#' + list_id).find("input.title"),
 			result_input_btn = $(this).parents('#' + list_id).find("input.update-button");
 			result_h1.toggleClass('hidden');
 			result_p.toggleClass('hidden');
-			result_input.toggleClass('hidden');
+			result_input_title.toggleClass('hidden');
 			result_input_btn.toggleClass('hidden');
 			//console.log(list_id);
 		
@@ -99,7 +86,7 @@ $(document).ready(function(){
 				type : 'POST',
 				dataType : 'json', //text
 				url : 'php/updateList.php?do=update-title',
-				data : {title: title, list_id: list_id},
+				data : {title: title, desc: desc, list_id: list_id},
 				
 				success: function(data){
 
