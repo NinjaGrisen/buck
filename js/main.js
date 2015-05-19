@@ -20,7 +20,7 @@ $(document).ready(function(){
 	/******************Splash page*********************/
 
 	//Show register
-	$('#showResiter').on('click', function(){
+	$('#showRegister').on('click', function(){
 		$('.activeRegister').addClass('registerActiveRemove');
 		$('.buckSplash').addClass('buckSplashRegister');
 		$('.registerForm').addClass('displayRegisterForm');

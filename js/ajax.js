@@ -6,14 +6,11 @@ $(document).ready(function(){
 		
 		$.ajax({
 			url : 'php/getList.php',
-			dataType : 'json', //text
+			dataType : 'json', 
 			
 			success: function(data){
-				//console.log(data);
 				$.each(data, function(i){
-					//$('#result').append('<p class="pointer" id="' + data[i].ItemID + '">' + data[i].Title + '</p>');
 					buckets.append(Mustache.render(bucketListAppend, data[i]));
-					//console.log('Printing out the data.');
 				});
 			},
 			error: function(){
@@ -26,11 +23,9 @@ $(document).ready(function(){
 			revert: false,
 			containment: 'parent',
 
-
 			stop: function(){
 			var bucketLength = $('.bucket-list-item').length;
 			var settingsValueBajs = 2;
-			//console.log('bucketLength' + bucketLength);
 
 			$('.bucket-list-item').each(function(i, v){
 				var itemId = $(v).attr('id'),
@@ -38,7 +33,7 @@ $(document).ready(function(){
 
 				$.ajax({
 					type : 'POST',
-					dataType : 'json', //text
+					dataType : 'json', 
 					url : 'php/updateList.php?do=update-rank',
 					data : {itemId: itemId, indexValue: indexValue},
 						
@@ -75,8 +70,7 @@ $(document).ready(function(){
 			result_input_title.toggleClass('hidden');
 			result_input_desc.toggleClass('hidden');
 			result_input_btn.toggleClass('hidden');
-			//console.log(list_id);
-		
+			
 		$('.update-button').click(function(){
 			
 			var title = $(this).parents('#' + list_id).find('.title').val(),
@@ -85,7 +79,7 @@ $(document).ready(function(){
 			$.ajax({
 				
 				type : 'POST',
-				dataType : 'json', //text
+				dataType : 'json', 
 				url : 'php/updateList.php?do=update-title',
 				data : {title: title, desc: desc, list_id: list_id},
 				
@@ -98,8 +92,7 @@ $(document).ready(function(){
 					toggeContainer.removeClass('expand-edit');
 				
 					buckets.find('#' + list_id).html(Mustache.render(bucketListAppend, data));
-					//console.log('Printing out the updated data.');
-					//console.log('Title: ' + typeof(title));
+							
 					list_id = null;
 				
 				},
@@ -108,24 +101,41 @@ $(document).ready(function(){
 			});
 		});
 	});
-	/*$.ajax({
-		url: 'php/listitem.php',
-		dataType: 'json',
-		success: function(data){
-			//console.log(data);
-			
-			$.each(data, function(i){
-				//console.log(data[i].Title);
-			//var template = "<h1>{{Title}} </h1><p>{{Desc}}</p><h2>{{Rank}}</h2>";
-			// print = Mustache.render(template, data[i]);
-				buckets.append(Mustache.render(bucketListAppend, data[i]));
-			});
-		},
-		error: function(data){
-		}
-	});*/
+
 	buckets.delegate('.edit-list-item', 'click', function(){
-			toggeContainer = $(this).parents('.bucket-list-item');
-			toggeContainer.toggleClass('expand-edit');
+		toggeContainer = $(this).parents('.bucket-list-item');
+		toggeContainer.toggleClass('expand-edit');
+	});
+
+	$('#newUser').on('click', function(){
+
+		$.ajax({
+			type : 'POST',
+			dataType : 'json', 
+			url : 'php/userManagement.php?do=add-user',
+			data : $('.registerForm').serialize(),
+			success: function(data){
+				console.log(data);
+			},
+			error: function(){
+
+			},
 		});
+	});
+
+	$('#loginButton').on('click', function(){
+
+		$.ajax({
+			type : 'POST',
+			dataType : 'json', 
+			url : 'php/userManagement.php?do=user-login',
+			data : $('#loginForm').serialize(),
+			success: function(data){
+				console.log(data);
+			},
+			error: function(){
+
+			},
+		});
+	});
 });
