@@ -223,7 +223,7 @@ html {
    }
 }
 
-.bucket-container{
+/*.bucket-container{
   margin-top: 20px;
 }
 
@@ -261,6 +261,26 @@ html {
 .icon.in-active:hover:before{
     display: none;
 }
+*/
+.bucket-container{
+  position: absolute;
+  right:0;
+  top:0;
+  bottom:0;
+  height:100%;
+
+  .filter_icon{
+    display: inline-block;
+    width: 300px;
+    height:100%;
+
+    .icon{
+      width: 300px;
+      height:12%;
+      background: red;
+    }
+  }
+}
 
 @icon-colors: 
     #ff0000,
@@ -286,10 +306,6 @@ html {
 
 .generate-icons();
 
-
-.bucket-list{
-  background: red;
-}
 .hidden{
   display: none;
 }

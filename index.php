@@ -16,20 +16,21 @@ include("includes/head.php");
 	</ul>
 
 </div>
-<div id="bucket-container">
-	<ul><
-	<div class="icon icon_1"></div>
-	<div class="icon icon_2"></div>
-	<div class="icon icon_3"></div>
-	<div class="icon icon_4"></div>
-	<div class="icon icon_5"></div>
-	<div class="icon icon_6"></div>
-	<div class="icon icon_7"></div>
-	<div class="icon icon_8"></div>
-	<div class="icon icon_9"></div>
-	<div class="icon icon_10"></div>
-	<div class="icon icon_11"></div>
-	<div class="icon icon_12"></div>
+<div class="bucket-container">
+	<ul class="filter_icon">
+		<li class="icon icon_1">hej</li>
+		<li class="icon icon_2">hej</li>
+		<li class="icon icon_3">hej</li>
+		<li class="icon icon_4">hej</li>
+		<li class="icon icon_5">hej</li>
+		<li class="icon icon_6">hej</li>
+		<li class="icon icon_7">hej</li>
+		<li class="icon icon_8">hej</li>
+		<li class="icon icon_9">hej</li>
+		<li class="icon icon_10">hej</li>
+		<li class="icon icon_11">hej</li>
+		<li class="icon icon_12">hej</li>
+	</ul>
 </div>
 <div class="headerBG"></div>
 <div id="container" >
@@ -60,9 +61,9 @@ include("includes/head.php");
 			<div class="large-9 medium-9 small-8 columns bucket-text-container">
 				<div class=" bucket-list-header">
 					<h1 class='list-title'>{{Title}}</h1>
-					<p class='list-desc'>{{Desc}}</p>
+					<p class='list-desc'>{{Description}}</p>
 					<input type="text" class='editable hidden title' value="{{Title}}" />
-					<input type="text" class='editable hidden desc' value="{{Desc}}" />
+					<input type="text" class='editable hidden desc' value="{{Description}}" />
 					<input type="button" class='editable hidden update-button' value="Update"/>
 				</div>
 			</div>
