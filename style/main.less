@@ -262,25 +262,6 @@ html {
     display: none;
 }
 */
-.bucket-container{
-  position: absolute;
-  right:0;
-  top:0;
-  bottom:0;
-  height:100%;
-
-  .filter_icon{
-    display: inline-block;
-    width: 300px;
-    height:100%;
-
-    .icon{
-      width: 300px;
-      height:12%;
-      background: red;
-    }
-  }
-}
 
 @icon-colors: 
     #ff0000,
@@ -300,11 +281,33 @@ html {
     .generate-icons((@i - 1));
       .icon_@{i} {
         background-color: extract(@icon-colors, @i);
-        background-image: url('@{images}icons/icon_@{i}.svg');
+        //background-image: url('@{images}icons/icon_@{i}.svg');
       }
     }
 
 .generate-icons();
+
+.bucket-container{
+  position: fixed;
+  right:0;
+  height:100%;
+  z-index: 99;
+
+  .filter_icon{
+    display: inline-block;
+    width: 100px;
+    height:100vh;
+    list-style: none;
+    margin-right: -85px;
+    text-align: center;
+
+    .icon{
+      width: 100px;
+      height:8.333vh;
+    }
+  }
+}
+
 
 .hidden{
   display: none;
