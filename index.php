@@ -63,7 +63,31 @@ include("includes/sidebar.php");
 
 		</div>
 	</div>
-	<!-- <input type="button" value="Value TOwns" class="valueTown"> -->
+
+	<div class="row">
+		<div class="large-12 medium-12 small-12 add-bucket-item">
+			<p class="add-heading">Add bucket list item</p>
+			<input type="text" class="add-title" name="add-title" placeholder="Title">
+			<select class="add-category">
+				<option>Choose Category...</option>
+				<option>Travel</option>
+				<option>Adventure</option>
+				<option>Experience</option>
+				<option>Learning</option>
+				<option>Career</option>
+				<option>Health</option>
+				<option>Relationships</option>
+				<option>Financial</option>
+				<option>Improvement</option>
+				<option>Milestones</option>
+				<option>Life Goals</option>
+				<option>Other</option>
+			</select>
+			<textarea class="add-desc" placeholder="Description"></textarea>
+			<input type="button" class='add-button' value="Add Item"/>
+		</div>
+	</div>
+
 	<div class="row buckets">
 	<template id="bucket-item-template">
 		<div id='{{ItemID}}' class="large-12 medium-12 small-12 bucket-list-item">
