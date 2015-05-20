@@ -4,6 +4,32 @@ $(document).ready(function(){
 		listmanagement = $('#listManagement'),
 		bucketListAppend = $('#bucket-item-template').html();
 		
+
+		$('img').load(function(){
+			var profileBox = $('.profile-page'),
+			profileTemplate = $('.profile-template').html();
+			
+			$.ajax({
+				url : 'php/userManagement.php?do=get-user',
+				dataType : 'json', 
+				
+				success: function(data){
+					console.log(data);
+					
+					$.each(data, function(i){
+						
+						profileBox.html(Mustache.render(profileTemplate, data[i]));;
+					
+					});
+					
+				},
+				error: function(){
+					console.log('Something went wrong!');
+				},
+			});
+		
+		});
+
 		$.ajax({
 			url : 'php/getList.php',
 			dataType : 'json', 
@@ -11,6 +37,7 @@ $(document).ready(function(){
 			success: function(data){
 				$.each(data, function(i){
 					buckets.append(Mustache.render(bucketListAppend, data[i]));
+					//console.log(data);
 				});
 			},
 			error: function(){

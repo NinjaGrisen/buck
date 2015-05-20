@@ -14,6 +14,19 @@ $data = '';
 
 $placeholder = 0;
 
+if($do === 'get-user'){
+	
+	$sql = "SELECT * FROM users WHERE UserName = :username";
+
+	$result = $dbh->prepare($sql);
+
+	$result->bindParam(':username', $_SESSION['userSession']);
+
+	$result->execute();
+
+	$data = $result->fetchAll();
+}
+
 if($do === 'add-user'){
 
 	$hashedPass = password_hash($_POST['password'], PASSWORD_BCRYPT, $options);
@@ -94,20 +107,6 @@ if($do === 'user-login'){
 	}
 	
 }
-if($do === 'get-user'){
-
-		$sql = "SELECT * FROM users WHERE UserName = :username";
-
-		$result = $dbh->prepare($sql);
-
-		$result->bindParam(':username', $_SESSION['userSession']);
-		//$result->bindParam(':password', $password);
-
-		$result->execute();
-
-		$data = $result->fetchAll();
-}
-
 
 header('Content-type: application/json');
 echo json_encode($data);
