@@ -64,10 +64,12 @@ $(document).ready(function(){
 			result_p = $(this).parents('#' + list_id).find("p.list-desc"),
 			result_input_title = $(this).parents('#' + list_id).find("input.title"),
 			result_input_desc = $(this).parents('#' + list_id).find("textarea.desc"),
+			result_input_remove = $(this).parents('#' + list_id).find("input.remove-button"),
 			result_input_btn = $(this).parents('#' + list_id).find("input.update-button");
 			result_h1.toggleClass('hidden');
 			result_p.toggleClass('hidden');
 			result_input_title.toggleClass('hidden');
+			result_input_remove.toggleClass('hidden');
 			result_input_desc.toggleClass('hidden');
 			result_input_btn.toggleClass('hidden');
 			
