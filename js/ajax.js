@@ -131,7 +131,11 @@ $(document).ready(function(){
 			url : 'php/userManagement.php?do=user-login',
 			data : $('#loginForm').serialize(),
 			success: function(data){
-				console.log(data);
+				if(data == 'Password is valid!'){
+					window.location.href = 'index.php'
+				}else{
+					console.log(data);
+				}
 			},
 			error: function(){
 

@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-header('Content-type: application/json');
+$do = isset($_GET['do']) ? $_GET['do'] : null;
 
 include('db/db.php');
 
@@ -13,8 +13,6 @@ $options = [
 $data = '';
 
 $placeholder = 0;
-
-$do = isset($_GET['do']) ? $_GET['do'] : null;
 
 if($do === 'add-user'){
 
@@ -30,7 +28,7 @@ if($do === 'add-user'){
 
 	if($findUsername->rowCount() > 0){
 	
-		$data = 'There is already a user with that Username, please try another one.';
+		$data = 'There is already a user with that name, please try another one.';
 
 	} else {
 
@@ -60,18 +58,18 @@ if($do === 'add-user'){
 	}
 }
 
+
 if($do === 'user-login'){
+
 
 	$user = $_POST['username'];
 	$password = $_POST['password'];
 	 
 	if($user == '') {
 		$data = 'You must enter your Username';
-		$errflag = true;
 	}
 	if($password == '') {
 		$data = 'You must enter your Password';
-		$errflag = true;
 	}
 	 
 	// query
@@ -87,18 +85,17 @@ if($do === 'user-login'){
 	$data = $result->fetchAll();
 
 	if (password_verify($password, $data[0]['Password'])) {
-
     	$_SESSION['userSession'] = $data[0]['UserName'];
+		//header('Location: http://localhost/buck/');  	
     	$data = 'Password is valid!';
-	
 	} else {
 	
 		$data = 'Wrong match with password, please try again';
-	
 	}
 }
 
 
+header('Content-type: application/json');
 echo json_encode($data);
 
 ?>
