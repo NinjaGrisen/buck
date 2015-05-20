@@ -65,33 +65,34 @@ if($do === 'user-login'){
 	$user = $_POST['username'];
 	$password = $_POST['password'];
 	 
-	if($user == '') {
+	if($user === '') {
 		$data = 'You must enter your Username';
 	}
-	if($password == '') {
+	else if($password === '') {
 		$data = 'You must enter your Password';
+	}else{
+		// query
+		$sql = "SELECT * FROM users WHERE UserName = :username";
+
+		$result = $dbh->prepare($sql);
+
+		$result->bindParam(':username', $user);
+		//$result->bindParam(':password', $password);
+
+		$result->execute();
+
+		$data = $result->fetchAll();
+
+		if (password_verify($password, $data[0]['Password'])) {
+	    	$_SESSION['userSession'] = $data[0]['UserName'];
+			//header('Location: http://localhost/buck/');  	
+	    	$data = 'Password is valid!';
+		} else {
+		
+			$data = 'Wrong match with password, please try again';
+		}	
 	}
-	 
-	// query
-	$sql = "SELECT * FROM users WHERE UserName = :username";
-
-	$result = $dbh->prepare($sql);
-
-	$result->bindParam(':username', $user);
-	//$result->bindParam(':password', $password);
-
-	$result->execute();
-
-	$data = $result->fetchAll();
-
-	if (password_verify($password, $data[0]['Password'])) {
-    	$_SESSION['userSession'] = $data[0]['UserName'];
-		//header('Location: http://localhost/buck/');  	
-    	$data = 'Password is valid!';
-	} else {
 	
-		$data = 'Wrong match with password, please try again';
-	}
 }
 
 

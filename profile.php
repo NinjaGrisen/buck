@@ -16,12 +16,8 @@ include("includes/sidebar.php");
 			<img src="img/profile-placeholder.png" class="profile-picture">
 			<table>
 				<tr>
-					<td class="profile-left">First Name</td>
-					<td>Ludwig</td>
-				</tr>
-				<tr>
-					<td class="profile-left">Last Name</td>
-					<td>von Beethoven</td>
+					<td class="profile-left">Name</td>
+					<td>Ludwig von Beethoven</td>
 				</tr>
 				<tr>
 					<td class="profile-left">Email</td>
