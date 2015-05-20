@@ -27,6 +27,7 @@ if($do === 'get-user'){
 	$data = $result->fetchAll();
 }
 
+
 if($do === 'add-user'){
 
 	$hashedPass = password_hash($_POST['password'], PASSWORD_BCRYPT, $options);

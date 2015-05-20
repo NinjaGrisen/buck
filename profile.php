@@ -2,6 +2,32 @@
 include("includes/head.php");
 include("includes/sidebar.php");
 ?>
+<script type="text/javascript">
+$(document).ready(function(){
+	var profileBox = $('.profile-page'),
+	profileTemplate = $('.profile-template').html();
+			
+	$.ajax({
+		url : 'php/userManagement.php?do=get-user',
+		dataType : 'json', 
+				
+		success: function(data){
+			console.log(data);
+					
+			$.each(data, function(i){
+						
+				profileBox.html(Mustache.render(profileTemplate, data[i]));;
+					
+			});
+					
+		},
+		error: function(){
+			console.log('Something went wrong!');
+		},
+	});
+		
+});
+</script>
 <div id="container" class="profile-page">
 <template class="profile-template">
 	<div class="row">
@@ -49,33 +75,6 @@ include("includes/sidebar.php");
 	</div>
 </template>
 </div>
-
-<script type="text/javascript">
-$(document).ready(function(){
-	var profileBox = $('.profile-page'),
-	profileTemplate = $('.profile-template').html();
-			
-	$.ajax({
-		url : 'php/userManagement.php?do=get-user',
-		dataType : 'json', 
-				
-		success: function(data){
-			console.log(data);
-					
-			$.each(data, function(i){
-						
-				profileBox.html(Mustache.render(profileTemplate, data[i]));;
-					
-			});
-					
-		},
-		error: function(){
-			console.log('Something went wrong!');
-		},
-	});
-		
-});
-</script>
 <?php
 include("includes/footer.php");
 ?>
