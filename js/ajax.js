@@ -63,7 +63,7 @@ $(document).ready(function(){
 			result_h1 = $(this).parents('#' + list_id).find("h1.list-title"),
 			result_p = $(this).parents('#' + list_id).find("p.list-desc"),
 			result_input_title = $(this).parents('#' + list_id).find("input.title"),
-			result_input_desc = $(this).parents('#' + list_id).find("input.desc"),
+			result_input_desc = $(this).parents('#' + list_id).find("textarea.desc"),
 			result_input_btn = $(this).parents('#' + list_id).find("input.update-button");
 			result_h1.toggleClass('hidden');
 			result_p.toggleClass('hidden');

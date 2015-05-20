@@ -79,8 +79,10 @@ include("includes/sidebar.php");
 				<div class=" bucket-list-header">
 					<h1 class='list-title'>{{Title}}</h1>
 					<p class='list-desc'>{{Description}}</p>
-					<input type="text" class='editable hidden title' value="{{Title}}" />
-					<input type="text" class='editable hidden desc' value="{{Description}}" />
+					<input type="text" class='editable hidden title' value="{{Title}}"/>
+					<br>
+					<textarea class='editable hidden desc'>{{Description}}</textarea>
+					<br>
 					<input type="button" class='editable hidden update-button' value="Update"/>
 				</div>
 			</div>
