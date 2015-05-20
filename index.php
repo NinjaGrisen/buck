@@ -108,6 +108,7 @@ include("includes/sidebar.php");
 					<textarea class='editable hidden desc'>{{Description}}</textarea>
 					<br>
 					<input type="button" class='editable hidden update-button' value="Update"/>
+					<input type="button" class='editable hidden remove-button' value="Remove"/>
 				</div>
 			</div>
 
