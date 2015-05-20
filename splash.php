@@ -35,11 +35,11 @@ include("includes/head.php");
 					<input type="text" name="name" placeholder="Full name" />
 					<select class="bday">
 						<option value="nooption">Year</option>
-						<option value="1992">1992</option>
+						<option class="regForm" value="1992">1992</option>
 					</select>
 					<select class="bday">
 						<option value="nooption">Month</option>
-						<option value="1992">08</option>
+						<option class="regForm" value="1992">08</option>
 					</select>
 					<select class="bday">
 						<option value="nooption">Day</option>

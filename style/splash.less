@@ -1,3 +1,20 @@
+@font-face{
+   font-family: TTChocolates;
+   src: url(../font/WEB/Regular/ttchocolates-regular-webfont.ttf),
+   url(../font/WEB/Regular/ttchocolates-regular-webfont.eot); /* IE */
+}
+
+@font-face{
+   font-family: TTChocolates;
+   src: url(../font/WEB/Bold/ttchocolates-bold-webfont.ttf),
+   url(../font/WEB/Bold/ttchocolates-bold-webfont.eot); /* IE */
+   font-weight: bold;
+}
+
+*{
+   font-family: TTChocolates;	
+}
+
 body{
 	background: url(../img/splashBG.png) no-repeat center center fixed; 
   -webkit-background-size: cover;
@@ -19,6 +36,7 @@ body{
 		margin-top: 10px;
 		font-size: 1.3em;
 		line-height: 1.3em;
+		color: black;
 	}
 	.login,
 	.register{
@@ -26,14 +44,11 @@ body{
 		background: #f6f6f6;
 		border-radius: 3px;
 		border:1px #b2b2b2 solid;
-
-
 		p{
 			text-align: left;
 			color:#737373;
 			margin: 0 0 10px 10px;
 		}
-	
 		input[type="text"],
 		input[type="password"],
 		input[type="submit"]
@@ -57,6 +72,12 @@ body{
 			background: #88c425;
 			border:#7bb222 1px solid;
 			color:#f6f6f6;
+		}
+		input[type="button"]{
+			width: 63px;
+			height: 35px;
+			margin-left: 10px;
+			border-radius: 3px;
 		}
 		input[type="checkbox"]{
 			margin-left:10px;

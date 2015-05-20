@@ -6,6 +6,7 @@ $(document).ready(function(){
 		$(this).toggleClass("in-active");
 	});
 
+	//Toggle menus
 	$('.filter-menu').click(function(){
 		$(this).toggleClass('active');
 		$('.menuFilter').toggleClass("active");
@@ -25,5 +26,19 @@ $(document).ready(function(){
 		$('.buckSplash').addClass('buckSplashRegister');
 		$('.registerForm').addClass('displayRegisterForm');
 	});
+
+	//Validation
+	$('#newUser').on('click', function(){
+
+		if($('.bday').selectedIndex === 0){
+			alert(12);
+		}
+	});
+
+		//Empty
+	
+		//Email
+
+		//Password match
 
 });

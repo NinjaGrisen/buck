@@ -182,9 +182,10 @@ html {
     display: block;
     width: 90%;
     margin: 20px auto 20px auto; 
-
   }
-
+  input{
+    font-family: TTChocolates;
+  }
   #search{
     padding-left: 3px; 
     margin: @navMargin @navMargin calc(@navMargin *2) @navMargin;
@@ -203,12 +204,46 @@ html {
 
     li{
       margin-bottom: @navMargin;
+      a{
+        color:black;
+        font-family: TTChocolates;
+        font-size: 1.2em;
+      }
     }
   }
-
 }
 
+.smallMenu{
+  padding-top: 7px;
+  background: #88c425;
+  height: 60px;
+  width: 100%;
+  display: none;
+  position: fixed;
+  z-index: 998;
 
+  .menuText,
+  .filterText{
+    color:white;
+    position: absolute;
+    left: 55px;
+    line-height: 46px;
+    font-family: TTChocolates;
+    font-size: 1.3em;
+  }
+  .filterText{
+    left: auto;
+    right: 70px;
+  }
+  .buckLogoSmall{
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    left:50%;
+    bottom: 0;
+    margin-left: -25px;
+  }
+}
 #container{
    background: url("@{images}bucketBG.png")center no-repeat; 
   -webkit-background-size: cover;
@@ -217,6 +252,7 @@ html {
   background-size: cover;
   margin-left: @leftNav;
   min-height: 100%;
+  padding-top: 60px;
 }
 
 .page-header {
@@ -238,14 +274,14 @@ html {
 .main-menu{
   width: 35px;
   height:45px;
-  position: fixed;
   left:0px;
+  position: absolute;
   border-style: 5px;
   margin-left: -55px;
   .transition(all, 200ms, ease-in-out);
 
   .menuContainer{
-      background: rgba(255,255,255,.5);
+      //background: rgba(255,255,255,.5);
       width: 55px;
       height:45px;
       overflow: auto;
@@ -262,7 +298,7 @@ html {
     cursor: pointer;
     height: 5px;
     width: 35px;
-    background: #262424;
+    background: white;
     position: absolute;
     content: '';
 }
@@ -325,6 +361,7 @@ html {
     position: fixed;
     right:24px;
     border-style: 5px;
+    z-index: 999;
     .transition(all, 200ms, ease-in-out);
 
 
@@ -335,7 +372,6 @@ html {
       margin-left:-11px;
       overflow: auto;
       cursor: pointer;
-      
     }
     #arrow-right {
         cursor: pointer;
@@ -348,7 +384,7 @@ html {
       cursor: pointer;
       height: 5px;
       width: 35px;
-      background: #262424;
+      background: black;
       position: absolute;
       content: '';
       right: 0;
@@ -384,7 +420,7 @@ html {
   position: fixed;
   right:0;
   height:100%;
-  z-index: 99;
+  z-index: 1000;
 
 
   .filter_icon{
@@ -395,10 +431,6 @@ html {
     margin-right: -125px;
 
     .icon{
-      text-align: center;
-      color:white;
-      text-shadow: 1px 1px black;
-      line-height: 8.333vh;
       width: 140px;
       height:8.333vh;
       border-left:6px solid rgba(0,0,0,.1);
@@ -410,6 +442,14 @@ html {
 
       &:hover{
         margin-left: -125px;
+      }
+      p{
+      text-align: center;
+      color:white;
+      text-shadow: 1px 1px black;
+      line-height: 8.333vh;
+      font-family: TTChocolates;
+      font-size: 1.2em;
       }
     }
     .icon:nth-child(1){
@@ -536,9 +576,15 @@ html {
 }
 
 
-@media only screen and (min-width: 30px) and (max-width: 1190px) {
+@media only screen and  (max-width: 1190px) {
   .main-menu{
     margin-left:0;
+  }
+  .filter-menu{
+
+    .menuContainer{
+      background: none;
+    }
   }
   .mainActive{
     margin-left: @leftNav;
@@ -552,5 +598,26 @@ html {
   }
   .mobDisplay{
     margin-left: 0;
+  }
+  .smallMenu{
+    display: block;
+  }
+  .bigMenu{
+    display: none;
+  }
+  .filter-menu{
+   
+    span,
+    span:before,
+    span:after {
+      background: white;
+    
+    }
+  }
+}
+
+@media only screen and  (max-width: 1050px) {
+  #container{
+    margin: 0 20px 0 7px; 
   }
 }

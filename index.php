@@ -7,43 +7,70 @@ include("includes/head.php");
 		<input type="text" name="search" id="search" placeholder="Search...">
 	</form>
 	<ul>
-		<li>Bucket</li>
-		<li>Profile</li>
-		<li>Friends</li>
-		<li>Milestones</li>
-		<li>Completed</li>
-		<li>Recomended</li>
+		<li>
+			<a href="#">Bucket</a>
+		</li>
+		<li>
+			<a href="#">Profile</a>
+		</li>
+		<li>
+			<a href="#">Friends</a>
+		</li>
+		<li>
+			<a href="#">Milestones</a>
+		</li>
+		<li>
+			<a href="#">Completed</a>
+		</li>
+		<li>
+			<a href="#">Recomended</a>
+		</li>
 	</ul>
 
 </div>
 
 <div class="bucket-container">
 	<ul class="filter_icon">
-		<li class="icon icon_1">Travel</li>
-		<li class="icon icon_2">Adventure</li>
-		<li class="icon icon_3">Experience</li>
-		<li class="icon icon_4">Learning</li>
-		<li class="icon icon_5">Career</li>
-		<li class="icon icon_6">Health</li>
-		<li class="icon icon_7">Relationships</li>
-		<li class="icon icon_8">Financial</li>
-		<li class="icon icon_9">Improvement</li>
-		<li class="icon icon_10">Milestones</li>
-		<li class="icon icon_11">Life goals</li>
-		<li class="icon icon_12">Other</li>
+		<li class="icon icon_1"><p>Travel</p></li>
+		<li class="icon icon_2"><p>Adventure</p></li>
+		<li class="icon icon_3"><p>Experience</p></li>
+		<li class="icon icon_4"><p>Learning</p></li>
+		<li class="icon icon_5"><p>Career</p></li>
+		<li class="icon icon_6"><p>Health</p></li>
+		<li class="icon icon_7"><p>Relationships</p></li>
+		<li class="icon icon_8"><p>Financial</p></li>
+		<li class="icon icon_9"><p>Improvement</p></li>
+		<li class="icon icon_10"><p>Milestones</p></li>
+		<li class="icon icon_11"><p>Life goals</p></li>
+		<li class="icon icon_12"><p>Other</p></li>
 	</ul>
 </div>
-<div class="main-menu">
-	<div class="menuContainer">
-		<div id="arrow-left" class="menuMain placement" >
-			<span></span>
+<div class="smallMenu">
+	<div class="main-menu">
+		<div class="menuContainer">
+			<div id="arrow-left" class="menuMain placement" >
+				<span></span>
+			</div>
+		</div>
+	</div>
+	<p class="menuText">Menu</p>
+	<img class="buckLogoSmall" alt="your bucket list" src="img/logoSmall.svg"/>
+	<p class="filterText">Filter</p>
+	<div class="filter-menu">
+		<div class="menuContainer">
+			<div id="arrow-right" class="menuFilter placement" >
+				<span></span>
+			</div>
 		</div>
 	</div>
 </div>
-<div class="filter-menu">
-	<div class="menuContainer">
-		<div id="arrow-right" class="menuFilter placement" >
-			<span></span>
+
+<div class="bigMenu">
+	<div class="filter-menu">
+		<div class="menuContainer">
+			<div id="arrow-right" class="menuFilter placement" >
+				<span></span>
+			</div>
 		</div>
 	</div>
 </div>
