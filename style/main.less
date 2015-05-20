@@ -629,26 +629,32 @@ html {
   padding: 10px;
   margin-top: 10px;
 
-  ul{
-    font-size: 1.3em;
-    float:left;
-    list-style-type: none;
-    margin: 0 15px 0 0;
+  .edit-profile {
+    float:right;
   }
 
-  .profile-list-bold {
+  table {
+    font-size: 1.3em;
+    float:left;
+  }
+  
+  .profile-left {
+    padding: 0 15px 0 0;
     font-weight: bold;
+  }
+
+  td {
+    border-bottom: 1px solid @greyLighter;
   }
 
   .profile-picture {
     width:230px;
-    float:right;
   }
 
   .about-container {
     float: left;
     padding: 0;
-    margin-top: 10px;
+    margin-top: 15px;
 
     .about {
       font-weight: bold;
@@ -658,5 +664,26 @@ html {
       font-size: 1.3em;
       margin: 0;
     }
+  }
+}
+
+@media only screen and (max-width: 710px) {
+  .profile-picture{
+    margin: 0 auto;
+    display: block;
+    float:none;
+  }
+  table {
+    margin-top: 15px;
+  }
+}
+
+@media only screen and (min-width: 711px) {
+  .profile-picture{
+    float:right;
+  }
+
+  .edit-profile {
+    margin-left: 10px;
   }
 }
