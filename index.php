@@ -103,11 +103,26 @@ include("includes/sidebar.php");
 				<div class=" bucket-list-header">
 					<h1 class='list-title'>{{Title}}</h1>
 					<p class='list-desc'>{{Description}}</p>
+					<select class="change-category">
+						<option>Travel</option>
+						<option>Adventure</option>
+						<option>Experience</option>
+						<option>Learning</option>
+						<option>Career</option>
+						<option>Health</option>
+						<option>Relationships</option>
+						<option>Financial</option>
+						<option>Improvement</option>
+						<option>Milestones</option>
+						<option>Life Goals</option>
+						<option>Other</option>
+					</select>
 					<input type="text" class='editable hidden title' value="{{Title}}"/>
 					<br>
 					<textarea class='editable hidden desc'>{{Description}}</textarea>
 					<br>
 					<input type="button" class='editable hidden update-button' value="Update"/>
+					<input type="button" class='editable hidden complete-button' value="Completed"/>
 					<input type="button" class='editable hidden remove-button' value="Remove"/>
 				</div>
 			</div>
