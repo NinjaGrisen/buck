@@ -588,6 +588,7 @@ body{
   border-top:1px solid @boxBorder;
   max-height: 120px;
   margin-bottom: 10px;
+  padding-bottom: 10px;
   border-right:10px solid #ff0000;
   display: inline-block;
   text-overflow: ellipsis; 
@@ -601,6 +602,7 @@ body{
       img {
          float:left;
          margin-top: 38px;
+         width: 24px;
       }
 
       p {
@@ -639,9 +641,13 @@ body{
     resize:none;
   }
 
+  .remove-button, .update-button, .complete-button {
+    float:left;
+    margin: 5px 5px 5px 0;
+  }
+
   .complete-button {
-    width: 100%;
-    margin: 0;
+    width: 100px;
     height: 35px;
     background: #2556c4;
     border:#1342aa 1px solid;
@@ -650,8 +656,7 @@ body{
   }
 
   .update-button {
-      width: 50%;
-      margin: 0;
+      width: 100px;
       height: 35px;
       background: #88c425;
       border:#7bb222 1px solid;
@@ -661,7 +666,6 @@ body{
 
   .remove-button {
       width: 100px;
-      margin: 0;
       height: 35px;
       background: #c42525;
       border:#980e0e 1px solid;
@@ -679,10 +683,7 @@ body{
     float:right;
   }
 
-  .remove-button, .update-button, .complete-button {
-    float:left;
-    margin: 5px 5px 5px 0;
-  }
+  
 
   h1 {
       font-family: TTChocolates;
@@ -716,6 +717,35 @@ body{
 .expand-edit{
   max-height: 600px;
   min-height: 300px;
+}
+
+
+
+/****FRIENDS PAGE****/
+.friends-box {
+  background: @boxBackground;
+  border: 1px solid @boxBorder;
+  padding: 10px;
+  margin-top: 10px;
+
+  p {
+    font-size: 1.3em;
+    margin: 0;
+  }
+
+  .friends-username {
+    font-weight: bold;
+  }
+
+  .profile-button, .bucket-button {
+    width: 100px;
+    margin: 0;
+    height: 35px;
+    background: #88c425;
+    border:#7bb222 1px solid;
+    border-radius: 3px;
+    color:#f6f6f6;
+  }
 }
 
 
@@ -838,31 +868,32 @@ body{
   .rank-number{
     display: none;
   }
+
+}
+@media only screen and (min-width:474px) and (max-width: 641px)  {
+  .bucket-text-container{
+    .update-button,
+    .remove-button {
+        width: 47%;
+    }
+    .remove-button{
+      float: right;
+    }    
+    .complete-button{
+      width: 100%;
+    }
+  }
 }
 
-/****FRIENDS PAGE****/
-.friends-box {
-  background: @boxBackground;
-  border: 1px solid @boxBorder;
-  padding: 10px;
-  margin-top: 10px;
 
-  p {
-    font-size: 1.3em;
-    margin: 0;
+@media only screen and (max-width: 474px) {
+  .bucket-text-container{
+    .update-button,
+    .remove-button,
+    .complete-button {
+        width: 100%;
+        float: left;
+    }    
   }
 
-  .friends-username {
-    font-weight: bold;
-  }
-
-  .profile-button, .bucket-button {
-    width: 100px;
-    margin: 0;
-    height: 35px;
-    background: #88c425;
-    border:#7bb222 1px solid;
-    border-radius: 3px;
-    color:#f6f6f6;
-  }
 }
