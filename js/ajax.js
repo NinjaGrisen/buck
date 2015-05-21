@@ -68,8 +68,10 @@ $(document).ready(function(){
 			result_input_remove = $(this).parents('#' + list_id).find("input.remove-button"),
 			result_input_btn = $(this).parents('#' + list_id).find("input.update-button");
 			result_input_complete = $(this).parents('#' + list_id).find("input.complete-button");
+			change_category = $(this).parents('#' + list_id).find('.change-category');
 			result_h1.toggleClass('hidden');
 			result_p.toggleClass('hidden');
+			change_category.toggleClass('hidden');
 			result_input_title.toggleClass('hidden');
 			result_input_remove.toggleClass('hidden');
 			result_input_complete.toggleClass('hidden');

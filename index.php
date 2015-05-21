@@ -104,7 +104,7 @@ include("includes/sidebar.php");
 				<div class=" bucket-list-header">
 					<h1 class='list-title'>{{Title}}</h1>
 					<p class='list-desc'>{{Description}}</p>
-					<select class="change-category">
+					<select class="change-category hidden editable">
 						<option>Travel</option>
 						<option>Adventure</option>
 						<option>Experience</option>
