@@ -10,11 +10,18 @@ $options = [
    'salt' => mcrypt_create_iv(22, MCRYPT_DEV_URANDOM),
 ];
 
+$userName = isset($_GET['username']) ? $_GET['username'] : null;
+
+echo $userName;
+die();
+
 $data = '';
 
 $placeholder = 0;
 
 if($do === 'get-user'){
+
+	
 	
 	$sql = "SELECT * FROM users WHERE UserName = :username";
 
