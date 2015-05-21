@@ -1,19 +1,13 @@
 <?php
 session_start();
+include('db/db.php');
 
 $do = isset($_GET['do']) ? $_GET['do'] : null;
-
-include('db/db.php');
 
 $options = [
    'cost' => 11,
    'salt' => mcrypt_create_iv(22, MCRYPT_DEV_URANDOM),
 ];
-
-$userName = isset($_GET['username']) ? $_GET['username'] : null;
-
-echo $userName;
-die();
 
 $data = '';
 
@@ -21,17 +15,26 @@ $placeholder = 0;
 
 if($do === 'get-user'){
 
-	
-	
-	$sql = "SELECT * FROM users WHERE UserName = :username";
+	$userName = isset($_GET['username']) ? $_GET['username'] : null;
 
-	$result = $dbh->prepare($sql);
+	$sqlFetchUser = "SELECT * FROM users WHERE UserName = :username";
 
-	$result->bindParam(':username', $_SESSION['userSession']);
+	$fetchUser = $dbh->prepare($sqlFetchUser);
 
-	$result->execute();
+	$fetchUser->bindParam(':username', $userName);
 
-	$data = $result->fetchAll();
+	$fetchUser->execute();
+
+	$data = $fetchUser->fetchAll();
+
+	echo $fetchUser->rowCount();
+	die();
+
+	if($fetchUser->rowCount() < 0){
+		$data = '';
+	}else{
+		$data = $fetchUser->fetchAll();
+	}	
 }
 
 
@@ -66,16 +69,6 @@ if($do === 'add-user'){
 		$insert->bindParam(':gender', $_POST['gender'], PDO::PARAM_STR);
 
 		$insert->execute();
-
-		$sqlfind = "SELECT * FROM users WHERE UserName = :username";
-
-		$find = $dbh->prepare($sqlfind);
-
-		$find->bindParam(':username', $_POST['username'], PDO::PARAM_STR);
-
-		$find->execute();
-
-		$data = $find->fetch(PDO::FETCH_ASSOC);
 	}
 }
 

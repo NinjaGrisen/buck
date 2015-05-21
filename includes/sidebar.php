@@ -6,7 +6,7 @@ session_start();
 		'</li>';
 	}else{
 		$userStatus = '<li>' .
-			'<a href="profile.php?username=' . $_SESSION['userSession'] . '">Profile</a>' .
+			'<a class="username" href="profile.php?username=' . $_SESSION['userSession'] . '">Profile</a>' .
 		'</li>'; 
 	}
 ?>
@@ -21,7 +21,7 @@ session_start();
 			<a href="index.php">Bucket</a>
 		</li>
 		<?php
-			echo $userStatus;
+			 print_r($userStatus);
 		?>
 		<li>
 			<a href="#">Friends</a>

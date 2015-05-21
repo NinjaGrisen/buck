@@ -4,27 +4,49 @@ include("includes/sidebar.php");
 ?>
 <script type="text/javascript">
 $(document).ready(function(){
-	var profileBox = $('.profile-page'),
+
+function GetURLParameter(sParam){
+    var sPageURL = window.location.search.substring(1);
+    var sURLVariables = sPageURL.split('&');
+    for (var i = 0; i < sURLVariables.length; i++)
+    {
+        var sParameterName = sURLVariables[i].split('=');
+        if (sParameterName[0] == sParam)
+        {
+            return sParameterName[1];
+        }
+    }
+}
+
+
+var profileBox = $('.profile-page'),
+	username = GetURLParameter('username'),
 	profileTemplate = $('.profile-template').html();
+
+console.log(username);
+
+$.ajax({
+	url : 'php/userManagement.php?do=get-user',
+	data: {username: username},
+
+	success: function(data){
+		if(data == ''){
 			
-	$.ajax({
-		url : 'php/userManagement.php?do=get-user',
-		dataType : 'json', 
-				
-		success: function(data){
+		}else{
 			console.log(data);
-					
-			$.each(data, function(i){
 						
+			$.each(data, function(i){
+							
 				profileBox.html(Mustache.render(profileTemplate, data[i]));;
+						
+			});	
+		}
 					
-			});
-					
-		},
-		error: function(){
-			console.log('Something went wrong!');
-		},
-	});
+	},
+	error: function(){
+		console.log('Something went wrong!');
+	},
+});
 		
 });
 </script>
