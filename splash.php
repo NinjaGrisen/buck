@@ -33,7 +33,6 @@ include("includes/headerSplash.php");
 					<input type="text" name="mail" placeholder="Email"/>
 					<input type="text" name="name" placeholder="Full name" />
 					<div id="age">
-						
 					</div>
 					<input type="password" name="password" placeholder="Password"/>
 					<input type="Password" placeholder="Repeat Password"/>

@@ -16,7 +16,7 @@
 	<script type="text/javascript" src="js/main.js"></script>
 	<script type="text/javascript" src="js/ajax.js"></script>
 	<script type="text/javascript" src="js/mustache.js"></script>
-	<script type="text/javascript" src="js/vendor/jquery-birthday-picker.min.js"></script>
+	<script type="text/javascript" src="js/jquery-birthday-picker.min.js"></script>
 	<script type="text/javascript" src="js/mob.js"></script>
 	<link rel="icon" type="image/png" sizes="192x192"  href="img/favicon/android-icon-192x192.png">
 	<link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
