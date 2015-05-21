@@ -3,6 +3,7 @@
 <head>
 	<title>Bucket List</title>
 	<meta charset="utf-8"/>
+	<meta name="viewport" content="initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="style/foundation.min.css" />
 	<link rel="stylesheet" type="text/css" href="style/normalize.css" />
 	<link rel="stylesheet/less" type="text/css" href="style/fondation-change.less" />
