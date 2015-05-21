@@ -25,12 +25,7 @@ if($do === 'get-user'){
 
 	$fetchUser->execute();
 
-	$data = $fetchUser->fetchAll();
-
-	echo $fetchUser->rowCount();
-	die();
-
-	if($fetchUser->rowCount() < 0){
+	if($fetchUser->rowCount() != 1){
 		$data = '';
 	}else{
 		$data = $fetchUser->fetchAll();

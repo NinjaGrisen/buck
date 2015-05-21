@@ -3,6 +3,7 @@ include("includes/head.php");
 include("includes/sidebar.php");
 ?>
 <script type="text/javascript">
+
 $(document).ready(function(){
 
 function GetURLParameter(sParam){
@@ -31,13 +32,13 @@ $.ajax({
 
 	success: function(data){
 		if(data == ''){
-			
+			$('#container').append('<div class="row"><div class="large-12 medium-12 small-12 columns profile-box"><p">There is no user with that name.</p></div></div>');
 		}else{
 			console.log(data);
 						
 			$.each(data, function(i){
 							
-				profileBox.html(Mustache.render(profileTemplate, data[i]));;
+				profileBox.html(Mustache.render(profileTemplate, data[i]));
 						
 			});	
 		}
@@ -50,6 +51,7 @@ $.ajax({
 		
 });
 </script>
+
 <div id="container" class="profile-page">
 <template class="profile-template">
 	<div class="row">

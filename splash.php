@@ -1,4 +1,4 @@
-<?php
+ <?php
 session_start();
 
 include("includes/headerSplash.php");
@@ -32,22 +32,9 @@ include("includes/headerSplash.php");
 					<input type="text" name="username" placeholder="Username"/>
 					<input type="text" name="mail" placeholder="Email"/>
 					<input type="text" name="name" placeholder="Full name" />
-					<select class="bday">
-						<option value="nooption">Year</option>
-						<option class="regForm" value="1992">1992</option>
-					</select>
-					<select class="bday">
-						<option value="nooption">Month</option>
-						<option class="regForm" value="1992">08</option>
-					</select>
-					<select class="bday">
-						<option value="nooption">Day</option>
-						<option value="1992">02</option>
-					</select>
-					<select class="gender" name="gender">
-						<option value="male">Male</option>
-						<option value="female">Female</option>
-					</select>
+					<div id="age">
+						
+					</div>
 					<input type="password" name="password" placeholder="Password"/>
 					<input type="Password" placeholder="Repeat Password"/>
 					<input type="checkbox">
