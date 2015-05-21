@@ -6,6 +6,13 @@ html {
 *, *:before, *:after {
   box-sizing: inherit;
 }
+body{
+  background: url("@{images}bucketBG.png") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
 
 @font-face{
    font-family: TTChocolates;
@@ -245,11 +252,6 @@ html {
   }
 }
 #container{
-   background: url("@{images}bucketBG.png") no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
   margin-left: @leftNav;
   min-height: 100%;
   padding-top: 60px;
@@ -662,12 +664,14 @@ html {
       font-family: TTChocolates;
       font-weight: bold;
       margin: 18px 0 0 0;
+      font-size: 1.3em;
    }
 
    p {
       font-family: TTChocolates;
       margin: 0;
-      font-size: 16pt;
+      font-size: 1.2em;
+      line-height: 1.2em;
    }
 }
 
@@ -675,6 +679,8 @@ html {
    height: 100%;
    margin: 0;
    border-right:10px solid #ff0000;
+   border-height:100%;
+
    .edit-list-item{
       text-align: center;
       margin-top:10px;
@@ -731,7 +737,7 @@ html {
 
 @media only screen and  (max-width: 1050px) {
   #container{
-    margin: 0 20px 0 7px; 
+    padding: 60px 20px 0 7px; 
   }
 }
 
@@ -798,6 +804,15 @@ html {
 
   .edit-profile {
     margin-left: 10px;
+  }
+}
+
+@media only screen and (max-width: 641px) {
+  .bucket-text-container{
+    float: left;
+  }
+  .rank-number{
+    display: none;
   }
 }
 

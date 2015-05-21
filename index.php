@@ -3,6 +3,7 @@ include("includes/head.php");
 include("includes/sidebar.php");
 ?>
 
+
 <div class="bucket-container">
 	<ul class="filter_icon">
 		<li class="icon icon_1"><p>Travel</p></li>
