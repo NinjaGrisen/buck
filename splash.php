@@ -3,16 +3,8 @@ session_start();
 
 include("includes/headerSplash.php");
 ?>
-
 <div class="wrapper">
 	<div class="splashContent">
-		<?php 
-		if(!isset($_SESSION['userSession'])) {
-			$_SESSION['userSession'] = '';
-		}else{
-			echo "Your session is running " . $_SESSION['userSession'];
-		}
-		?>
 		<img class="buckSplash" src="img/logo.svg"/>
 		<p class="activeRegister">Make a list of everything you want to experience in life and DO IT!</p>
 		<div class="login activeRegister">
@@ -32,6 +24,10 @@ include("includes/headerSplash.php");
 					<input type="text" name="username" placeholder="Username"/>
 					<input type="text" name="mail" placeholder="Email"/>
 					<input type="text" name="name" placeholder="Full name" />
+					<select class="gender" name="gender">
+						<option value="Male">Male</option>
+						<option value="Female">Female</option>
+					</select>
 					<div id="age">
 					</div>
 					<input type="password" name="password" placeholder="Password"/>
@@ -42,9 +38,11 @@ include("includes/headerSplash.php");
 				</form>
 			<button class="activeRegister" id="showRegister">Register</button>
 		</div>
-	</div>	
+	</div>
+<script type="text/javascript">
+	$('#age').birthdayPicker();
+</script>
 </div>
-
 <?php
 include("includes/footer.php");
 ?>
