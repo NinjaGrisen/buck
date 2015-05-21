@@ -32,10 +32,7 @@ if($do === 'get-user'){
 	}	
 }
 
-
 if($do === 'add-user'){
-
-	$hashedPass = password_hash($_POST['password'], PASSWORD_BCRYPT, $options);
 
 	$sqlfindUserName = "SELECT * FROM users WHERE UserName = :username";
 
@@ -51,6 +48,8 @@ if($do === 'add-user'){
 
 	} else {
 
+		$hashedPass = password_hash($_POST['password'], PASSWORD_BCRYPT, $options);
+
 		$sqlInsert = "INSERT INTO users (UserName, Password, Name, Age, Mail, Country, Gender, Role, Userpicture, Facebook) VALUES (:username, :password, :name, :age, :mail, :country, :gender, 0, 0, 0)";
 
 		$insert = $dbh->prepare($sqlInsert);
@@ -59,14 +58,13 @@ if($do === 'add-user'){
 		$insert->bindParam(':password', $hashedPass, PDO::PARAM_STR);
 		$insert->bindParam(':name', $_POST['name'], PDO::PARAM_STR);
 		$insert->bindParam(':mail', $_POST['mail'], PDO::PARAM_STR);
-		$insert->bindParam(':age', $placeholder, PDO::PARAM_STR);
+		$insert->bindParam(':age', $_POST['birthDay'], PDO::PARAM_STR);
 		$insert->bindParam(':country', $placeholder, PDO::PARAM_STR);
 		$insert->bindParam(':gender', $_POST['gender'], PDO::PARAM_STR);
 
 		$insert->execute();
 	}
 }
-
 
 if($do === 'user-login'){
 

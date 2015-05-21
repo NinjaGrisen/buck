@@ -1,12 +1,22 @@
 <?php
 session_start();
 	if(!isset($_SESSION['userSession'])) {
-		$userStatus = '<li>' .
-			'<a href="profile.php">Profile</a>' .
-		'</li>';
+		$userStatus = '';
 	}else{
 		$userStatus = '<li>' .
 			'<a class="username" href="profile.php?username=' . $_SESSION['userSession'] . '">Profile</a>' .
+		'</li>'.
+		'<li>' .
+			'<a href="friends.php">Friends</a>' .
+		'</li>' .
+		'<li>' .
+			'<a href="#">Milestones</a>' .
+		'</li>' .
+		'<li>' .
+			'<a href="#">Completed</a>' .
+		'</li>' .
+		'<li>' .
+			'<a href="#">Recomended</a>' .
 		'</li>'; 
 	}
 ?>
@@ -23,18 +33,6 @@ session_start();
 		<?php
 			 print_r($userStatus);
 		?>
-		<li>
-			<a href="friends.php">Friends</a>
-		</li>
-		<li>
-			<a href="#">Milestones</a>
-		</li>
-		<li>
-			<a href="#">Completed</a>
-		</li>
-		<li>
-			<a href="#">Recomended</a>
-		</li>
 	</ul>
 
 </div>
