@@ -259,18 +259,33 @@ body{
 
 .page-header {
    background: @bucketGreen;
-   height:120px;
    border:1px solid @headerBorder;
    margin-top:20px;
 
    h1 {
       font-family: TTChocolates;
       font-weight: bold;
-      font-size: 60px;
+      font-size: 3.750em;
       text-align: center;
       color: @textWhite;
-      margin-top: 20px;
+      margin: 20px 0 20px;
    }
+}
+
+@media only screen and  (max-width: 625px) {
+  .page-header {
+    h1 {
+      font-size: 3em;
+    }
+  }
+}
+
+@media only screen and  (max-width: 510px) {
+  .page-header {
+    h1 {
+      font-size: 2em;
+    }
+  }
 }
 
 .main-menu{
@@ -691,7 +706,7 @@ body{
    }
 }
 .expand-edit{
-  height: 300px;
+  min-height: 300px;
 }
 
 

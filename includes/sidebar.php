@@ -24,7 +24,7 @@ session_start();
 			 print_r($userStatus);
 		?>
 		<li>
-			<a href="#">Friends</a>
+			<a href="friends.php">Friends</a>
 		</li>
 		<li>
 			<a href="#">Milestones</a>
