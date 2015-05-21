@@ -59,13 +59,23 @@ include("includes/sidebar.php");
 	</div>
 
 	<div class="row">
+		<div class="large-12 medium-12 small-12 bucket-sorting-menu">
+			<p>Sorting</p>
+			<input type="button" class="sorting-button" value="All">
+			<input type="button" class="sorting-button" value="To Do">
+			<input type="button" class="sorting-button" value="Completed">
+			<input type="button" class="add-button-menu" value="Add List Item">
+		</div>
+	</div>
+
+	<!--<div class="row">
 		<div class="larger-12 bucket-container">
 			
 
 		</div>
-	</div>
+	</div>-->
 
-	<div class="row">
+	<div class="row add-item-box hidden">
 		<div class="large-12 medium-12 small-12 add-bucket-item">
 			<p class="add-heading">Add bucket list item</p>
 			<input type="text" class="add-title" name="add-title" placeholder="Title">

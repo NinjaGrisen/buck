@@ -13,6 +13,10 @@ $(document).ready(function(){
 		$(this).toggleClass('inactive');
 	});
 
+	$('.add-button-menu').click(function(){
+		$('.add-item-box').toggleClass('hidden');
+	});
+
 	$('.main-menu').click(function(){
 		$('.menuMain').toggleClass("active");
 		$('.sidebar').toggleClass('mobDisplay');
