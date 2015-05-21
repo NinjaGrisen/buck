@@ -1,17 +1,18 @@
 $(document).ready(function(){
 	/******************Index page*********************/
 
-	//Grayout icons
-	$('.icon').on('click', function(){
-		$(this).toggleClass("in-active");
-	});
-
 	//Toggle menus
 	$('.filter-menu').click(function(){
 		$(this).toggleClass('active');
 		$('.menuFilter').toggleClass("active");
 		$('.icon').toggleClass('dropOut');
 	});
+
+	//Grey out icon
+	$('.icon').click(function(){
+		$(this).toggleClass('inactive');
+	});
+
 	$('.main-menu').click(function(){
 		$('.menuMain').toggleClass("active");
 		$('.sidebar').toggleClass('mobDisplay');
