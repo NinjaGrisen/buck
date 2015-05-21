@@ -588,6 +588,7 @@ body{
   border-top:1px solid @boxBorder;
   max-height: 120px;
   margin-bottom: 10px;
+  border-right:10px solid #ff0000;
   display: inline-block;
   text-overflow: ellipsis; 
   overflow: hidden;
@@ -639,7 +640,7 @@ body{
   }
 
   .complete-button {
-    width: 100px;
+    width: 100%;
     margin: 0;
     height: 35px;
     background: #2556c4;
@@ -649,11 +650,21 @@ body{
   }
 
   .update-button {
-      width: 100px;
+      width: 50%;
       margin: 0;
       height: 35px;
       background: #88c425;
       border:#7bb222 1px solid;
+      border-radius: 3px;
+      color:#f6f6f6;
+  }
+
+  .remove-button {
+      width: 100px;
+      margin: 0;
+      height: 35px;
+      background: #c42525;
+      border:#980e0e 1px solid;
       border-radius: 3px;
       color:#f6f6f6;
   }
@@ -666,16 +677,6 @@ body{
     background: @greyLighter;
     border:1px solid @greyLight;
     float:right;
-  }
-
-  .remove-button {
-      width: 100px;
-      margin: 0;
-      height: 35px;
-      background: #c42525;
-      border:#980e0e 1px solid;
-      border-radius: 3px;
-      color:#f6f6f6;
   }
 
   .remove-button, .update-button, .complete-button {
@@ -701,7 +702,6 @@ body{
 .bucket-controller-container{
    height: 100%;
    margin: 0;
-   border-right:10px solid #ff0000;
    border-height:100%;
 
    .edit-list-item{

@@ -95,7 +95,7 @@ include("includes/sidebar.php");
 
 			<div class="large-2 medium-2 small-2 columns bucket-index-container">
 				<div class="bucket-index">
-					<img class="drag" src="img/drag.png"/>
+					<img class="drag" src="img/drag.svg"/>
 					<p class="rank-number">{{Rank}}</p>
 				</div>
 			</div>
@@ -123,8 +123,8 @@ include("includes/sidebar.php");
 					<textarea class='editable hidden desc'>{{Description}}</textarea>
 					<br>
 					<input type="button" class='editable hidden update-button' value="Update"/>
-					<input type="button" class='editable hidden complete-button' value="Completed"/>
 					<input type="button" class='editable hidden remove-button' value="Remove"/>
+					<input type="button" class='editable hidden complete-button' value="Completed"/>
 				</div>
 			</div>
 
